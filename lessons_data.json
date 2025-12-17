@@ -1,3 +1,439 @@
 {
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": 1,
+      "name": "Programming Basics",
+      "description": "Learn fundamental programming concepts",
+      "icon": "code",
+      "color": "FF2196F3",
+      "order_index": 1
+    },
+    {
+      "id": 2,
+      "name": "Advanced Topics",
+      "description": "Deep dive into advanced programming",
+      "icon": "rocket",
+      "color": "FF9C27B0",
+      "order_index": 2
+    },
+    {
+      "id": 3,
+      "name": "Practice & Projects",
+      "description": "Apply your knowledge with real projects",
+      "icon": "build",
+      "color": "FFFF9800",
+      "order_index": 3
+    }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "category_id": 1,
+      "version": "1.0",
+      "title": "Caesar Cipher - Introduction",
+      "description": "Learn the fundamentals of Caesar cipher encryption",
+      "cover_image": "https://picsum.photos/400/250?random=101",
+      "content": "The Caesar Cipher is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.\n\nFor example, with a shift of 3:\n• A becomes D\n• B becomes E\n• C becomes F\n\nThis cipher is named after Julius Caesar, who used it to communicate with his generals. While it's not secure by modern standards, it's an excellent introduction to cryptographic concepts.\n\nKey Concepts:\n• Plaintext: The original message\n• Ciphertext: The encrypted message\n• Key (Shift): The number of positions to shift\n• Encryption: Converting plaintext to ciphertext\n• Decryption: Converting ciphertext back to plaintext",
+      "order_index": 1,
+      "video": {
+        "youtube_id": "sMOZf4GN3oc",
+        "duration": "8:30",
+        "title": "Caesar Cipher Explained"
+      },
+      "algorithm": {
+        "name": "caesar",
+        "display_name": "Caesar Cipher",
+        "description": "Encrypt text using Caesar cipher with a customizable shift value",
+        "inputs": [
+          {
+            "label": "Plaintext",
+            "icon": "📚",
+            "type": "text",
+            "placeholder": "Enter text to encrypt",
+            "default_value": "HELLO",
+            "hint": "Enter the message you want to encrypt",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Plaintext",
+              "decrypt": "Ciphertext"
+            }
+          },
+          {
+            "label": "Shift",
+            "icon": "🔑",
+            "type": "int",
+            "placeholder": "Enter shift value (1-25)",
+            "default_value": "3",
+            "min_value": 1,
+            "max_value": 25,
+            "hint": "Number of positions to shift each letter",
+            "required": true
+          }
+        ],
+        "output": {
+          "type": "text",
+          "label": "Encrypted Text"
+        },
+        "modes": [
+          {
+            "id": "encrypt",
+            "label": "encrypt",
+            "icon": "🔒"
+          },
+          {
+            "id": "decrypt",
+            "label": "decrypt",
+            "icon": "🔓"
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": 1,
+          "question": "What is the Caesar cipher named after?",
+          "option_a": "A mathematician",
+          "option_b": "Julius Caesar",
+          "option_c": "A computer scientist",
+          "option_d": "An ancient city",
+          "correct_answer": "B",
+          "order_index": 1
+        },
+        {
+          "id": 2,
+          "question": "What type of cipher is the Caesar cipher?",
+          "option_a": "Substitution cipher",
+          "option_b": "Transposition cipher",
+          "option_c": "Stream cipher",
+          "option_d": "Block cipher",
+          "correct_answer": "A",
+          "order_index": 2
+        },
+        {
+          "id": 3,
+          "question": "With a shift of 3, what does 'A' become?",
+          "option_a": "B",
+          "option_b": "C",
+          "option_c": "D",
+          "option_d": "E",
+          "correct_answer": "C",
+          "order_index": 3
+        },
+        {
+          "id": 4,
+          "question": "Is the Caesar cipher secure for modern use?",
+          "option_a": "Yes, very secure",
+          "option_b": "No, easily broken",
+          "option_c": "Only with large shifts",
+          "option_d": "Only for military use",
+          "correct_answer": "B",
+          "order_index": 4
+        },
+        {
+          "id": 5,
+          "question": "How many possible shifts are there in Caesar cipher?",
+          "option_a": "10",
+          "option_b": "25",
+          "option_c": "26",
+          "option_d": "Infinite",
+          "correct_answer": "B",
+          "order_index": 5
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category_id": 1,
+      "version": "1.0",
+      "title": "Variables and Data Types",
+      "description": "Understanding how to store and manipulate data",
+      "cover_image": "https://picsum.photos/400/250?random=2",
+      "content": "Variables are containers for storing data values. In programming, we use different data types to represent different kinds of information.\n\nCommon Data Types:\n• Integer: Whole numbers (e.g., 42, -7, 0)\n• Float/Double: Decimal numbers (e.g., 3.14, -0.5)\n• String: Text (e.g., \"Hello\", \"World\")\n• Boolean: True or False values\n\nVariables allow us to:\n• Store data temporarily\n• Reuse values throughout our code\n• Make our programs dynamic and flexible\n\nBest Practices:\n• Use meaningful variable names\n• Choose appropriate data types\n• Initialize variables before use\n• Follow naming conventions",
+      "order_index": 2,
+      "video": {
+        "youtube_id": "OH86oLzVzzw",
+        "duration": "8:45",
+        "title": "Variables Explained"
+      },
+      "algorithm": {
+        "name": "caesar",
+        "display_name": "Caesar Cipher",
+        "description": "Encrypt text using Caesar cipher with a customizable shift value",
+        "inputs": [
+          {
+            "label": "Plaintext",
+            "icon": "📚",
+            "type": "text",
+            "placeholder": "Enter text to encrypt",
+            "default_value": "HELLO",
+            "hint": "Enter the message you want to encrypt",
+            "required": true
+          },
+          {
+            "label": "Shift",
+            "icon": "🔑",
+            "type": "int",
+            "placeholder": "Enter shift value (1-25)",
+            "default_value": "3",
+            "min_value": 1,
+            "max_value": 25,
+            "hint": "Number of positions to shift each letter",
+            "required": true
+          }
+        ],
+        "output": {
+          "type": "text",
+          "label": "Encrypted Text"
+        }
+      },
+      "tests": [
+        {
+          "id": 6,
+          "question": "Which data type is used for whole numbers?",
+          "option_a": "String",
+          "option_b": "Integer",
+          "option_c": "Float",
+          "option_d": "Boolean",
+          "correct_answer": "B",
+          "order_index": 1
+        },
+        {
+          "id": 7,
+          "question": "What data type is 'Hello World'?",
+          "option_a": "Integer",
+          "option_b": "Boolean",
+          "option_c": "String",
+          "option_d": "Float",
+          "correct_answer": "C",
+          "order_index": 2
+        },
+        {
+          "id": 8,
+          "question": "Which value is a Boolean?",
+          "option_a": "42",
+          "option_b": "3.14",
+          "option_c": "true",
+          "option_d": "\"yes\"",
+          "correct_answer": "C",
+          "order_index": 3
+        },
+        {
+          "id": 9,
+          "question": "What is 3.14 as a data type?",
+          "option_a": "Integer",
+          "option_b": "Float",
+          "option_c": "String",
+          "option_d": "Boolean",
+          "correct_answer": "B",
+          "order_index": 4
+        },
+        {
+          "id": 10,
+          "question": "Can a variable change its value?",
+          "option_a": "No, never",
+          "option_b": "Yes, that's why it's called a variable",
+          "option_c": "Only in Python",
+          "option_d": "Only once",
+          "correct_answer": "B",
+          "order_index": 5
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category_id": 2,
+      "version": "1.0",
+      "title": "Advanced Algorithms",
+      "description": "Master complex problem-solving techniques",
+      "cover_image": "https://picsum.photos/400/250?random=3",
+      "content": "Advanced algorithms help solve complex computational problems efficiently. Understanding these concepts is crucial for writing optimized code.\n\nKey Topics:\n• Time Complexity (Big O notation)\n• Space Complexity\n• Sorting Algorithms\n• Searching Algorithms\n• Data Structures\n• Dynamic Programming\n• Graph Algorithms\n\nWhy Learn Algorithms?\n• Write more efficient code\n• Solve problems systematically\n• Pass technical interviews\n• Optimize application performance\n\nCommon Patterns:\n• Divide and Conquer\n• Greedy Algorithms\n• Backtracking\n• Recursion",
+      "order_index": 1,
+      "video": {
+        "youtube_id": "OH86oLzVzzw",
+        "duration": "8:45",
+        "title": "Algorithms Overview"
+      },
+      "algorithm": {
+        "name": "caesar",
+        "display_name": "Caesar Cipher",
+        "description": "Encrypt text using Caesar cipher with a customizable shift value",
+        "inputs": [
+          {
+            "label": "Plaintext",
+            "icon": "📚",
+            "type": "text",
+            "placeholder": "Enter text to encrypt",
+            "default_value": "HELLO",
+            "hint": "Enter the message you want to encrypt",
+            "required": true
+          },
+          {
+            "label": "Shift",
+            "icon": "🔑",
+            "type": "int",
+            "placeholder": "Enter shift value (1-25)",
+            "default_value": "3",
+            "min_value": 1,
+            "max_value": 25,
+            "hint": "Number of positions to shift each letter",
+            "required": true
+          }
+        ],
+        "output": {
+          "type": "text",
+          "label": "Encrypted Text"
+        }
+      },
+      "tests": [
+        {
+          "id": 11,
+          "question": "What is Big O notation used for?",
+          "option_a": "Measuring code quality",
+          "option_b": "Analyzing algorithm efficiency",
+          "option_c": "Debugging errors",
+          "option_d": "Writing documentation",
+          "correct_answer": "B",
+          "order_index": 1
+        },
+        {
+          "id": 12,
+          "question": "Which sorting algorithm is fastest on average?",
+          "option_a": "Bubble Sort",
+          "option_b": "Quick Sort",
+          "option_c": "Insertion Sort",
+          "option_d": "Selection Sort",
+          "correct_answer": "B",
+          "order_index": 2
+        },
+        {
+          "id": 13,
+          "question": "What data structure uses LIFO?",
+          "option_a": "Queue",
+          "option_b": "Array",
+          "option_c": "Stack",
+          "option_d": "Tree",
+          "correct_answer": "C",
+          "order_index": 3
+        },
+        {
+          "id": 14,
+          "question": "What is recursion?",
+          "option_a": "A loop that never ends",
+          "option_b": "A function calling itself",
+          "option_c": "A type of variable",
+          "option_d": "An error in code",
+          "correct_answer": "B",
+          "order_index": 4
+        },
+        {
+          "id": 15,
+          "question": "What is dynamic programming?",
+          "option_a": "Writing code quickly",
+          "option_b": "Optimization technique using memoization",
+          "option_c": "Creating dynamic websites",
+          "option_d": "Real-time programming",
+          "correct_answer": "B",
+          "order_index": 5
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category_id": 3,
+      "version": "1.0",
+      "title": "Build a Calculator App",
+      "description": "Create a functional calculator from scratch",
+      "cover_image": "https://picsum.photos/400/250?random=4",
+      "content": "In this hands-on project, you'll build a fully functional calculator application from scratch. This project will help you understand UI design, event handling, and application logic.\n\nWhat You'll Build:\n• Basic arithmetic operations (+, -, ×, ÷)\n• Clear and delete functions\n• Decimal point support\n• Error handling\n• Responsive UI design\n\nSkills You'll Learn:\n• UI/UX Design principles\n• Event-driven programming\n• State management\n• Input validation\n• Error handling\n\nFeatures to Implement:\n• Number buttons (0-9)\n• Operation buttons (+, -, ×, ÷)\n• Equals button for calculations\n• Clear (C) and Delete (DEL) buttons\n• Display screen for input/output",
+      "order_index": 1,
+      "video": {
+        "youtube_id": "9Os0o3wzS_I",
+        "duration": "15:30",
+        "title": "Calculator App Tutorial"
+      },
+      "algorithm": {
+        "name": "caesar",
+        "display_name": "Caesar Cipher",
+        "description": "Encrypt text using Caesar cipher with a customizable shift value",
+        "inputs": [
+          {
+            "label": "Plaintext",
+            "icon": "📚",
+            "type": "text",
+            "placeholder": "Enter text to encrypt",
+            "default_value": "HELLO",
+            "hint": "Enter the message you want to encrypt",
+            "required": true
+          },
+          {
+            "label": "Shift",
+            "icon": "🔑",
+            "type": "int",
+            "placeholder": "Enter shift value (1-25)",
+            "default_value": "3",
+            "min_value": 1,
+            "max_value": 25,
+            "hint": "Number of positions to shift each letter",
+            "required": true
+          }
+        ],
+        "output": {
+          "type": "text",
+          "label": "Encrypted Text"
+        }
+      },
+      "tests": [
+        {
+          "id": 16,
+          "question": "What UI component displays calculation results?",
+          "option_a": "Button",
+          "option_b": "Text field",
+          "option_c": "Label",
+          "option_d": "Menu",
+          "correct_answer": "B",
+          "order_index": 1
+        },
+        {
+          "id": 17,
+          "question": "How do you handle operator precedence?",
+          "option_a": "Ignore it",
+          "option_b": "Use parentheses",
+          "option_c": "Evaluate left to right",
+          "option_d": "Use proper parsing logic",
+          "correct_answer": "D",
+          "order_index": 2
+        },
+        {
+          "id": 18,
+          "question": "What happens when dividing by zero?",
+          "option_a": "App crashes",
+          "option_b": "Returns zero",
+          "option_c": "Should show error",
+          "option_d": "Nothing",
+          "correct_answer": "C",
+          "order_index": 3
+        },
+        {
+          "id": 19,
+          "question": "Which event triggers calculation?",
+          "option_a": "Equals button click",
+          "option_b": "Any button click",
+          "option_c": "App start",
+          "option_d": "Screen touch",
+          "correct_answer": "A",
+          "order_index": 4
+        },
+        {
+          "id": 20,
+          "question": "How to store calculation history?",
+          "option_a": "In memory only",
+          "option_b": "Array or database",
+          "option_c": "Don't store it",
+          "option_d": "In a file",
+          "correct_answer": "B",
+          "order_index": 5
+        }
+      ]
+    }
+  ]
 }
