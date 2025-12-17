@@ -1,3 +1,36 @@
 {
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "last_updated": "2024-01-01T00:00:00Z",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Caesar Cipher - Introduction",
+      "version": "1.0",
+      "change_type": "new",
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "title": "Variables and Data Types",
+      "version": "1.0",
+      "change_type": "new",
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "title": "Advanced Algorithms",
+      "version": "1.0",
+      "change_type": "new",
+      "category_id": 2
+    },
+    {
+      "id": 4,
+      "title": "Build a Calculator App",
+      "version": "1.0",
+      "change_type": "new",
+      "category_id": 3
+    }
+  ],
+  "total_lessons": 4,
+  "min_app_version": "1.0.0"
 }
