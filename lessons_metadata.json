@@ -1,36 +1,86 @@
 {
-  "version": "1.0.0",
-  "last_updated": "2024-01-01T00:00:00Z",
+  "version": "1.1.0",
+  "last_updated": "2025-03-16T10:30:00Z",
   "lessons": [
     {
       "id": 1,
-      "title": "Caesar Cipher - Introduction",
+      "title": "Sezar shifri — Kirish",
       "version": "1.0",
-      "change_type": "new",
-      "category_id": 1
+      "content_hash": "27d3125a8fd0",
+      "has_changes": false,
+      "change_type": null
     },
     {
       "id": 2,
-      "title": "Variables and Data Types",
-      "version": "1.0",
-      "change_type": "new",
-      "category_id": 1
+      "title": "Vigenère shifri — Polialfavitli shifrlash",
+      "version": "1.1",
+      "content_hash": "8342f6e679bb",
+      "has_changes": true,
+      "change_type": "content_updated"
     },
     {
       "id": 3,
-      "title": "Advanced Algorithms",
+      "title": "Playfair shifri — Digraph shifrlash",
       "version": "1.0",
-      "change_type": "new",
-      "category_id": 2
+      "content_hash": "752292a2ba6f",
+      "has_changes": false,
+      "change_type": null
     },
     {
       "id": 4,
-      "title": "Build a Calculator App",
+      "title": "AES shifri — Zamonaviy blok shifrlash",
       "version": "1.0",
-      "change_type": "new",
-      "category_id": 3
+      "content_hash": "d0cb46e84e4f",
+      "has_changes": false,
+      "change_type": null
+    },
+    {
+      "id": 5,
+      "title": "DES shifri — Feistel tuzilmasi va klassik blok shifrlash",
+      "version": "1.0",
+      "content_hash": "dab4a0d1edb0",
+      "has_changes": false,
+      "change_type": null
+    },
+    {
+      "id": 6,
+      "title": "3DES (Triple DES) — DESning kuchaytirilgan versiyasi",
+      "version": "1.0",
+      "content_hash": "8a13a3052679",
+      "has_changes": false,
+      "change_type": null
+    },
+    {
+      "id": 7,
+      "title": "ChaCha20 — Zamonaviy oqim shifri",
+      "version": "1.0",
+      "content_hash": "2bea7218fa61",
+      "has_changes": false,
+      "change_type": "new_lesson"
+    },
+    {
+      "id": 8,
+      "title": "RSA shifri — Asimmetrik kriptografiyaning asosi",
+      "version": "1.0",
+      "content_hash": "88eb6b1db9b3",
+      "has_changes": false,
+      "change_type": "new_lesson"
+    },
+    {
+      "id": 9,
+      "title": "Elliptik egri chiziqlar kriptografiyasi (ECC)",
+      "version": "1.0",
+      "content_hash": "bfacfcce94fd",
+      "has_changes": false,
+      "change_type": "new_lesson"
+    },
+    {
+      "id": 10,
+      "title": "ElGamal shifri — Diskret logarifm muammosiga asoslangan ochiq kalitli shifr",
+      "version": "1.0",
+      "content_hash": "b96bf90afb94",
+      "has_changes": false,
+      "change_type": "new_lesson"
     }
-  ],
-  "total_lessons": 4,
-  "min_app_version": "1.0.0"
+  ]
 }
