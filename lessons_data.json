@@ -1,89 +1,83 @@
 {
-  "version": "1.0.0",
-  "categories": [
-    {
-      "id": 1,
-      "name": "Programming Basics",
-      "description": "Learn fundamental programming concepts",
-      "icon": "code",
-      "color": "FF2196F3",
-      "order_index": 1
-    },
-    {
-      "id": 2,
-      "name": "Advanced Topics",
-      "description": "Deep dive into advanced programming",
-      "icon": "rocket",
-      "color": "FF9C27B0",
-      "order_index": 2
-    },
-    {
-      "id": 3,
-      "name": "Practice & Projects",
-      "description": "Apply your knowledge with real projects",
-      "icon": "build",
-      "color": "FFFF9800",
-      "order_index": 3
-    }
-  ],
+  "version": "1.1.0",
   "lessons": [
     {
       "id": 1,
       "category_id": 1,
       "version": "1.0",
-      "title": "Caesar Cipher - Introduction",
-      "description": "Learn the fundamentals of Caesar cipher encryption",
-      "cover_image": "https://picsum.photos/400/250?random=101",
-      "content": "The Caesar Cipher is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.\n\nFor example, with a shift of 3:\n• A becomes D\n• B becomes E\n• C becomes F\n\nThis cipher is named after Julius Caesar, who used it to communicate with his generals. While it's not secure by modern standards, it's an excellent introduction to cryptographic concepts.\n\nKey Concepts:\n• Plaintext: The original message\n• Ciphertext: The encrypted message\n• Key (Shift): The number of positions to shift\n• Encryption: Converting plaintext to ciphertext\n• Decryption: Converting ciphertext back to plaintext",
+      "title": "Sezar shifri — Kirish",
+      "description": "Sezar shifri shifrlashning asosiy tamoyillarini o'rganing",
+      "cover_image": "https://gkaccess.com/wp-content/uploads/2020/01/Caesar_Cipher_GateKeeper_security_compliance_proximity_authentication_2fa_mfa-979x1024.jpg",
+      "content": "Sezar shifri — eng sodda va eng mashhur shifrlash usullaridan biri bo'lib, almashtirish (substitution) shifri turiga kiradi. Bu usulda ochiq matndagi har bir harf alifbodagi ma'lum bir sonli pozitsiyaga siljitiladi (o'ngga yoki chapga).\n\nMisol: siljish soni (kalit) = 3 bo'lsa:\n• A → D\n• B → E\n• C → F\n...\n• X → A\n• Y → B\n• Z → C\n\nBu shifrlash usuli Rim imperatori Yuliy Sezar (Julius Caesar) nomi bilan atalgan. U o'z generallari bilan maxfiy xatlar yozishda aynan shu usuldan foydalangan (odatda siljish 3 bo'lgan).\n\nAsosiy tushunchalar:\n• Ochiq matn (plaintext) — shifrlanmagan asl xabar\n• Shifrlangan matn (ciphertext) — shifrlangan xabar\n• Kalit (shift) — harflarni necha pozitsiyaga siljitish kerakligi (odatda 1 dan 25 gacha)\n• Shifrlash (encryption) — ochiq matnni shifrlangan matnga aylantirish\n• Deshifrlash (decryption) — shifrlangan matnni ochiq matnga qaytarish\n\nZamonaviy kriptografiyada bu usul xavfsiz hisoblanmaydi, chunki uni juda oson buzish mumkin (masalan, barcha 25 ta mumkin bo'lgan kalitni sinab ko'rish orqali). Ammo bu usul kriptografiyaga kirish uchun juda yaxshi misol bo'lib xizmat qiladi.\n\nMisol (siljish = 3):\nOchiq matn: SALOM DUNYO\nShifrlangan matn: VDORP GXQBR\n\nDeshifrlash uchun esa har bir harfni 3 ta chapga siljitish kifoya.",
       "order_index": 1,
       "video": {
         "youtube_id": "sMOZf4GN3oc",
         "duration": "8:30",
-        "title": "Caesar Cipher Explained"
+        "title": "Sezar shifri tushuntirilishi (ingliz tilida)"
       },
+      "images": [
+        {
+          "url": "https://ozlib.com/htm/img/7/21386/5.png",
+          "type": "diagram",
+          "position": 1,
+          "caption": "Siljish 3 bo'lganda harflar qanday o'zgarishi (Caesar cipher misoli)"
+        },
+        {
+          "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_65b3940ca4f0b52104b42a89_65b39954f406b93fee6d2706/scale_1200",
+          "type": "illustration",
+          "position": 2,
+          "caption": "Yuliy Sezar — ushbu shifrlash usulidan foydalangan Rim imperatori"
+        },
+        {
+          "url": "https://habrastorage.org/getpro/habr/upload_files/a48/b3a/8fb/a48b3a8fbf2dae352383ddbc974b5d12.jpg",
+          "type": "inline",
+          "position": 3,
+          "caption": "Ochiq matn → Shifrlangan matn misoli (shift = 3)"
+        }
+      ],
       "algorithm": {
         "name": "caesar",
-        "display_name": "Caesar Cipher",
-        "description": "Encrypt text using Caesar cipher with a customizable shift value",
+        "display_name": "Sezar shifri",
+        "description": "Matnni Sezar shifri yordamida shifrlash yoki deshifrlash — siljish qiymatini o'zingiz tanlaysiz",
         "inputs": [
           {
             "label": "Plaintext",
-            "icon": "📚",
+            "icon": "📝",
             "type": "text",
-            "placeholder": "Enter text to encrypt",
-            "default_value": "HELLO",
-            "hint": "Enter the message you want to encrypt",
+            "placeholder": "Shifrlanadigan matnni kiriting",
+            "default_value": "SALOM",
+            "hint": "Shifrlamoqchi bo'lgan xabarni yozing",
             "required": true,
             "label_for_mode": {
-              "encrypt": "Plaintext",
-              "decrypt": "Ciphertext"
+              "encrypt": "Ochiq matn",
+              "decrypt": "Shifrlangan matn"
             }
           },
           {
-            "label": "Shift",
-            "icon": "🔑",
+            "label": "Siljish soni",
+            "icon": "🔢",
             "type": "int",
-            "placeholder": "Enter shift value (1-25)",
+            "placeholder": "1 dan 25 gacha son kiriting",
             "default_value": "3",
             "min_value": 1,
             "max_value": 25,
-            "hint": "Number of positions to shift each letter",
+            "hint": "Harflarni necha pozitsiyaga siljitish kerak?",
             "required": true
           }
         ],
         "output": {
           "type": "text",
-          "label": "Encrypted Text"
+          "label": "Natija"
         },
         "modes": [
           {
             "id": "encrypt",
-            "label": "encrypt",
+            "label": "shifrlash",
             "icon": "🔒"
           },
           {
             "id": "decrypt",
-            "label": "decrypt",
+            "label": "deshifrlash",
             "icon": "🔓"
           }
         ]
@@ -91,27 +85,27 @@
       "tests": [
         {
           "id": 1,
-          "question": "What is the Caesar cipher named after?",
-          "option_a": "A mathematician",
-          "option_b": "Julius Caesar",
-          "option_c": "A computer scientist",
-          "option_d": "An ancient city",
+          "question": "Sezar shifri qaysi shaxs nomi bilan atalgan?",
+          "option_a": "Matematik",
+          "option_b": "Yuliy Sezar",
+          "option_c": "Kompyuter olimi",
+          "option_d": "Qadimgi shahar",
           "correct_answer": "B",
           "order_index": 1
         },
         {
           "id": 2,
-          "question": "What type of cipher is the Caesar cipher?",
-          "option_a": "Substitution cipher",
-          "option_b": "Transposition cipher",
-          "option_c": "Stream cipher",
-          "option_d": "Block cipher",
+          "question": "Sezar shifri qanday turdagi shifrlash usuli?",
+          "option_a": "Almashtirish shifri",
+          "option_b": "Joy almashtirish shifri",
+          "option_c": "Oqim shifri",
+          "option_d": "Blok shifri",
           "correct_answer": "A",
           "order_index": 2
         },
         {
           "id": 3,
-          "question": "With a shift of 3, what does 'A' become?",
+          "question": "Siljish 3 bo'lsa, 'A' harfi nimaga aylanadi?",
           "option_a": "B",
           "option_b": "C",
           "option_c": "D",
@@ -121,21 +115,21 @@
         },
         {
           "id": 4,
-          "question": "Is the Caesar cipher secure for modern use?",
-          "option_a": "Yes, very secure",
-          "option_b": "No, easily broken",
-          "option_c": "Only with large shifts",
-          "option_d": "Only for military use",
+          "question": "Sezar shifri zamonaviy aloqalar uchun xavfsizmi?",
+          "option_a": "Ha, juda xavfsiz",
+          "option_b": "Yo'q, oson buziladi",
+          "option_c": "Faqat katta siljishlarda",
+          "option_d": "Faqat harbiy maqsadlarda",
           "correct_answer": "B",
           "order_index": 4
         },
         {
           "id": 5,
-          "question": "How many possible shifts are there in Caesar cipher?",
-          "option_a": "10",
-          "option_b": "25",
-          "option_c": "26",
-          "option_d": "Infinite",
+          "question": "Sezar shifrida nechta mumkin bo'lgan siljish qiymati mavjud?",
+          "option_a": "10 ta",
+          "option_b": "25 ta",
+          "option_c": "26 ta",
+          "option_d": "Cheksiz",
           "correct_answer": "B",
           "order_index": 5
         }
@@ -144,96 +138,142 @@
     {
       "id": 2,
       "category_id": 1,
-      "version": "1.0",
-      "title": "Variables and Data Types",
-      "description": "Understanding how to store and manipulate data",
-      "cover_image": "https://picsum.photos/400/250?random=2",
-      "content": "Variables are containers for storing data values. In programming, we use different data types to represent different kinds of information.\n\nCommon Data Types:\n• Integer: Whole numbers (e.g., 42, -7, 0)\n• Float/Double: Decimal numbers (e.g., 3.14, -0.5)\n• String: Text (e.g., \"Hello\", \"World\")\n• Boolean: True or False values\n\nVariables allow us to:\n• Store data temporarily\n• Reuse values throughout our code\n• Make our programs dynamic and flexible\n\nBest Practices:\n• Use meaningful variable names\n• Choose appropriate data types\n• Initialize variables before use\n• Follow naming conventions",
+      "version": "1.1",
+      "title": "Vigenère shifri — Polialfavitli shifrlash",
+      "description": "Kalit so'z yordamida matnni murakkabroq shifrlash usulini o'rganing",
+      "cover_image": "https://www.cryptomuseum.com/crypto/vigenere/img/300378/001/full.jpg",
+      "content": "Vigenère shifri — Sezar shifridan ancha rivojlangan polialfavitli (ko'p alifboli) shifrlash usuli. Bu usul 16-asrda fransuz diplomati Blaise de Vigenère tomonidan taklif qilingan (garchi u haqiqatda undan oldin ham mavjud bo'lgan bo'lsa ham).\n\nAsosiy farqi: bitta doimiy siljish o'rniga kalit so'z (keyword) ishlatiladi. Kalit so'z har bir harf uchun turli siljish qiymatini beradi. Shu sababli oddiy chastota tahlili (frequency analysis) bilan buzish ancha qiyinlashadi.\n\nQanday ishlaydi?\n1. Kalit so'zni ochiq matn uzunligiga yetguncha takrorlaymiz.\n2. Har bir ochiq matn harfi kalitning mos harfi bilan shifrlanadi (Sezar shifri kabi).\n3. Har bir kalit harfi alifbodagi pozitsiyasiga qarab siljish qiymatini beradi (A=0, B=1, ..., Z=25).\n\nMisol:\nOchiq matn: SALOM DUNYO\nKalit so'z: KEY (takrorlanadi → KEYKEYKEYKE)\n\nS → K (siljish 10) → C\nA → E (siljish 4) → E\nL → Y (siljish 24) → J\nO → K (siljish 10) → Y\nM → E (siljish 4) → Q\n\n... va hokazo.\n\nNatija (taxminiy): CEJYQ...\n\nDeshifrlash uchun teskari jarayon amalga oshiriladi: kalit harfi bo'yicha siljishni chapga qaytarish kifoya.\n\nAfzalliklari:\n• Sezardan ko'ra xavfsizroq\n• Chastota tahliliga chidamliroq\n\nKamchiliklari:\n• Agar kalit so'z qisqa bo'lsa va matn uzun bo'lsa — hali ham tahlil qilish mumkin\n• Zamonaviy standartlar bo'yicha xavfsiz emas\n\nVigenère jadvali (tabula recta) yordamida shifrlashni qo'lda ham qilish mumkin — bu 26×26 harfli jadval bo'lib, har bir qator oldingisidan 1 harfga siljigan.\n\nAmalda kalit so'z uzun va tasodifiy bo'lsa, shifr ancha mustahkam bo'ladi.",
       "order_index": 2,
       "video": {
-        "youtube_id": "OH86oLzVzzw",
-        "duration": "8:45",
-        "title": "Variables Explained"
+        "youtube_id": "RCkGauRMs2A",
+        "duration": "10:15",
+        "title": "Vigenère Cipher Explained (ingliz tilida)"
       },
+      "images": [
+        {
+          "url": "https://cdn.britannica.com/50/7850-050-219843C0/letter-plaintext-table-Vigenere-cipher-intersection-row.jpg",
+          "type": "diagram",
+          "position": 1,
+          "caption": "Vigenère jadvali (tabula recta) — shifrlash uchun asosiy vosita"
+        },
+        {
+          "url": "https://intellipaat.com/blog/wp-content/uploads/2022/06/image-1.png",
+          "type": "diagram",
+          "position": 2,
+          "caption": "Vigenère kvadrat jadvali — har bir qator Sezar siljishiga mos"
+        },
+        {
+          "url": "https://paulminogue.com/images/042eae36-a985-43b4-9624-a5b88e45041c_image_3.png",
+          "type": "table",
+          "position": 3,
+          "caption": "Vigenère jadvalining zamonaviy ko'rinishi (A dan Z gacha)"
+        },
+        {
+          "url": "https://i.ytimg.com/vi/SkJcmCaHqS0/maxresdefault.jpg",
+          "type": "illustration",
+          "position": 4,
+          "caption": "Misol: 'ATTACKATDAWN' matnini 'LEMON' kaliti bilan shifrlash jarayoni"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Blaise_de_Vigenere..._%28BM_1869%2C0612.200%29.jpg",
+          "type": "portrait",
+          "position": 5,
+          "caption": "Blaise de Vigenère — shifrlash usulining nomi unga nisbat berilgan fransuz diplomati"
+        }
+      ],
       "algorithm": {
-        "name": "caesar",
-        "display_name": "Caesar Cipher",
-        "description": "Encrypt text using Caesar cipher with a customizable shift value",
+        "name": "vigenere",
+        "display_name": "Vigenère shifri",
+        "description": "Kalit so'z yordamida matnni polialfavitli usulda shifrlash yoki deshifrlash",
         "inputs": [
           {
             "label": "Plaintext",
-            "icon": "📚",
+            "icon": "📝",
             "type": "text",
-            "placeholder": "Enter text to encrypt",
-            "default_value": "HELLO",
-            "hint": "Enter the message you want to encrypt",
-            "required": true
+            "placeholder": "Shifrlanadigan matnni kiriting",
+            "default_value": "SALOM DUNYO",
+            "hint": "Faqat harflar shifrlanadi, bo'shliq va belgilar o'zgarmaydi",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Ochiq matn",
+              "decrypt": "Shifrlangan matn"
+            }
           },
           {
-            "label": "Shift",
+            "label": "Kalit so'z",
             "icon": "🔑",
-            "type": "int",
-            "placeholder": "Enter shift value (1-25)",
-            "default_value": "3",
-            "min_value": 1,
-            "max_value": 25,
-            "hint": "Number of positions to shift each letter",
+            "type": "text",
+            "placeholder": "Kalit so'zni kiriting",
+            "default_value": "KALIT",
+            "hint": "Harflar ishlatiladi (bo'shliq va raqamlar olib tashlanadi)",
             "required": true
           }
         ],
         "output": {
           "type": "text",
-          "label": "Encrypted Text"
-        }
+          "label": "Natija"
+        },
+        "modes": [
+          {
+            "id": "encrypt",
+            "label": "shifrlash",
+            "icon": "🔒"
+          },
+          {
+            "id": "decrypt",
+            "label": "deshifrlash",
+            "icon": "🔓"
+          }
+        ]
       },
       "tests": [
         {
           "id": 6,
-          "question": "Which data type is used for whole numbers?",
-          "option_a": "String",
-          "option_b": "Integer",
-          "option_c": "Float",
-          "option_d": "Boolean",
+          "question": "Vigenère shifri qanday turdagi shifrlash usuli?",
+          "option_a": "Monoalfavitli (bitta alifbo)",
+          "option_b": "Polialfavitli (ko'p alifbo)",
+          "option_c": "Transpozitsiya shifri",
+          "option_d": "Blok shifri",
           "correct_answer": "B",
           "order_index": 1
         },
         {
           "id": 7,
-          "question": "What data type is 'Hello World'?",
-          "option_a": "Integer",
-          "option_b": "Boolean",
-          "option_c": "String",
-          "option_d": "Float",
-          "correct_answer": "C",
+          "question": "Vigenère shifrida siljish qiymati nimaga bog'liq?",
+          "option_a": "Doimiy raqamga",
+          "option_b": "Kalit so'z harflariga",
+          "option_c": "Matn uzunligiga",
+          "option_d": "Tasodifiy sonlarga",
+          "correct_answer": "B",
           "order_index": 2
         },
         {
           "id": 8,
-          "question": "Which value is a Boolean?",
-          "option_a": "42",
-          "option_b": "3.14",
-          "option_c": "true",
-          "option_d": "\"yes\"",
-          "correct_answer": "C",
+          "question": "Vigenère shifri qachon paydo bo'lgan deb hisoblanadi?",
+          "option_a": "Qadimgi Rim davrida",
+          "option_b": "16-asrda",
+          "option_c": "20-asrda",
+          "option_d": "Internet davrida",
+          "correct_answer": "B",
           "order_index": 3
         },
         {
           "id": 9,
-          "question": "What is 3.14 as a data type?",
-          "option_a": "Integer",
-          "option_b": "Float",
-          "option_c": "String",
-          "option_d": "Boolean",
+          "question": "Kalit so'z 'KEY' bo'lsa, ikkinchi harf uchun qaysi siljish ishlatiladi?",
+          "option_a": "K → 10",
+          "option_b": "E → 4",
+          "option_c": "Y → 24",
+          "option_d": "A → 0",
           "correct_answer": "B",
           "order_index": 4
         },
         {
           "id": 10,
-          "question": "Can a variable change its value?",
-          "option_a": "No, never",
-          "option_b": "Yes, that's why it's called a variable",
-          "option_c": "Only in Python",
-          "option_d": "Only once",
+          "question": "Vigenère shifri Sezar shifridan nimasi bilan farq qiladi?",
+          "option_a": "Hech qanday farqi yo'q",
+          "option_b": "Har bir harf uchun turli siljish ishlatiladi",
+          "option_c": "Faqat raqamlarni shifrlaydi",
+          "option_d": "Matnni teskari tartibda yozadi",
           "correct_answer": "B",
           "order_index": 5
         }
@@ -241,97 +281,152 @@
     },
     {
       "id": 3,
-      "category_id": 2,
+      "category_id": 1,
       "version": "1.0",
-      "title": "Advanced Algorithms",
-      "description": "Master complex problem-solving techniques",
-      "cover_image": "https://picsum.photos/400/250?random=3",
-      "content": "Advanced algorithms help solve complex computational problems efficiently. Understanding these concepts is crucial for writing optimized code.\n\nKey Topics:\n• Time Complexity (Big O notation)\n• Space Complexity\n• Sorting Algorithms\n• Searching Algorithms\n• Data Structures\n• Dynamic Programming\n• Graph Algorithms\n\nWhy Learn Algorithms?\n• Write more efficient code\n• Solve problems systematically\n• Pass technical interviews\n• Optimize application performance\n\nCommon Patterns:\n• Divide and Conquer\n• Greedy Algorithms\n• Backtracking\n• Recursion",
-      "order_index": 1,
+      "title": "Playfair shifri — Digraph shifrlash",
+      "description": "Kalit so'z yordamida 5×5 jadvalda juft harflarni shifrlash usulini o'rganing",
+      "cover_image": "https://miro.medium.com/1*v4xzkzTYmdbRGgDlU-d9Mw.png",
+      "content": "Playfair shifri — 1854-yilda ingliz olimi Charles Wheatstone tomonidan ixtiro qilingan, lekin uning do'sti Lord Lyon Playfair tomonidan ommalashtirilgani uchun shu nom bilan mashhur bo'lgan birinchi amaliy digraph (juft harf) almashtirish shifri hisoblanadi.\n\nAsosiy xususiyati: matn juft-juft harflarga bo'linadi va 5×5 o'lchamdagi maxsus jadval (key square) yordamida shifrlanadi. Jadval kalit so'zdan tuziladi, ingliz alifbosidagi 26 harfdan biri (odatda J) I bilan birlashtiriladi, chunki jadvalga 25 ta katak yetadi.\n\nQanday ishlaydi?\n1. Kalit so'zni kiriting (masalan, MONARCHY). Takrorlanadigan harflarni olib tashlang.\n2. Qolgan alifbo harflarini tartib bilan qo'shing (J ni I bilan birlashtirib).\n3. 5×5 jadval hosil bo'ladi.\n\nMatnni tayyorlash:\n- Bo'shliq va tinish belgilarni olib tashlang, hammasini katta harfga o'tkazing.\n- Juftlarga bo'ling. Agar ikkita bir xil harf ketma-ket kelsa, orasiga 'X' (yoki boshqa belgi) qo'ying.\n- Agar matn uzunligi toq bo'lsa, oxiriga 'X' qo'shing.\n\nShifrlash qoidalari (3 ta asosiy qoida):\n1. Agar ikkala harf bir qatorda bo'lsa — har birini o'ngdagi harf bilan almashtiring (oxirgi harfdan keyin birinchi harfga o'tiladi).\n2. Agar ikkala harf bir ustunda bo'lsa — har birini pastdagi harf bilan almashtiring (pastki oxiridan yuqoriga o'tiladi).\n3. Agar harflar to'rtburchak shaklida joylashsa — har bir harfni o'z qatorida, lekin ikkinchi harf ustunidagi harf bilan almashtiring.\n\nMisol (kalit: MONARCHY):\nJadval:\nM O N A R\nC H Y B D\nE F G I/J K\nL P Q S T\nU V W X Z\n\nMatn: INSTRUMENTS\nJuftlar: IN ST RU ME NT SX (oxiriga X qo'shildi)\n\nShifrlangan natija (misol): GATLMZCLRQTX\n\nDeshifrlash teskari qoidalarga amal qiladi: o'ng → chap, past → yuqori, to'rtburchakda teskari almashtirish.\n\nAfzalliklari:\n• Sezar va Vigenère'dan ko'ra chastota tahliliga chidamliroq\n• Qo'lda ishlatish oson\n\nKamchiliklari:\n• Qisqa kalit va uzun matnda hali ham zaifliklar mavjud\n• Zamonaviy kriptografiyada xavfsiz emas\n\nIkkinchi jahon urushida ham ba'zi harbiy aloqalarda ishlatilgan.",
+      "order_index": 3,
       "video": {
-        "youtube_id": "OH86oLzVzzw",
-        "duration": "8:45",
-        "title": "Algorithms Overview"
+        "youtube_id": "SkJcmCaHqS0",
+        "duration": "12:20",
+        "title": "Playfair Cipher tushuntirilishi (ingliz tilida)"
       },
+      "images": [
+        {
+          "url": "https://media.geeksforgeeks.org/wp-content/uploads/20190818175431/encryption-of-me.png",
+          "type": "diagram",
+          "position": 1,
+          "caption": "MONARCHY kaliti bilan tuzilgan 5×5 Playfair jadvali (J harfi I bilan birlashtirilgan)"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Playfair_Cipher_01_HI_to_BM_%28cropped%29.png",
+          "type": "diagram",
+          "position": 2,
+          "caption": "Playfair shifri qoidalari: qator, ustun va to'rtburchak holatlari"
+        },
+        {
+          "url": "https://media.geeksforgeeks.org/wp-content/uploads/20190818175428/encryption-of-instruments.png",
+          "type": "diagram",
+          "position": 3,
+          "caption": "Playfair shifrlash jarayoni bosqichma-bosqich misol (rectangular rule ko'rsatilgan)"
+        },
+        {
+          "url": "https://www.baeldung.com/wp-content/uploads/sites/4/2023/07/encryption-playfair.png",
+          "type": "diagram",
+          "position": 4,
+          "caption": "Boshqa kalit so'z bilan yaratilgan Playfair kvadrati misoli"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Charles_Wheatstone_later_years.jpg/250px-Charles_Wheatstone_later_years.jpg",
+          "type": "portrait",
+          "position": 5,
+          "caption": "Charles Wheatstone — Playfair shifrining ixtirochisi (1854)"
+        }
+      ],
       "algorithm": {
-        "name": "caesar",
-        "display_name": "Caesar Cipher",
-        "description": "Encrypt text using Caesar cipher with a customizable shift value",
+        "name": "playfair",
+        "display_name": "Playfair shifri",
+        "description": "5×5 jadval va kalit so'z yordamida juft harflarni shifrlash yoki deshifrlash",
         "inputs": [
           {
             "label": "Plaintext",
-            "icon": "📚",
+            "icon": "📝",
             "type": "text",
-            "placeholder": "Enter text to encrypt",
-            "default_value": "HELLO",
-            "hint": "Enter the message you want to encrypt",
+            "placeholder": "Shifrlanadigan matnni kiriting",
+            "default_value": "INSTRUMENTS",
+            "hint": "Bo'shliqlar olib tashlanadi, J → I ga o'zgartiriladi",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Ochiq matn",
+              "decrypt": "Shifrlangan matn"
+            }
+          },
+          {
+            "label": "Kalit so'z",
+            "icon": "🔑",
+            "type": "text",
+            "placeholder": "Kalit so'zni kiriting",
+            "default_value": "MONARCHY",
+            "hint": "Takror harflar olib tashlanadi",
             "required": true
           },
           {
-            "label": "Shift",
-            "icon": "🔑",
-            "type": "int",
-            "placeholder": "Enter shift value (1-25)",
-            "default_value": "3",
-            "min_value": 1,
-            "max_value": 25,
-            "hint": "Number of positions to shift each letter",
-            "required": true
+            "label": "To'ldiruvchi harf",
+            "icon": "❎",
+            "type": "text",
+            "placeholder": "To'ldiruvchi harf (masalan X)",
+            "default_value": "X",
+            "hint": "Juft bo'lmagan matn yoki takror harflar uchun ishlatiladi",
+            "required": false
           }
         ],
         "output": {
           "type": "text",
-          "label": "Encrypted Text"
-        }
+          "label": "Natija"
+        },
+        "modes": [
+          {
+            "id": "encrypt",
+            "label": "shifrlash",
+            "icon": "🔒"
+          },
+          {
+            "id": "decrypt",
+            "label": "deshifrlash",
+            "icon": "🔓"
+          }
+        ]
       },
       "tests": [
         {
           "id": 11,
-          "question": "What is Big O notation used for?",
-          "option_a": "Measuring code quality",
-          "option_b": "Analyzing algorithm efficiency",
-          "option_c": "Debugging errors",
-          "option_d": "Writing documentation",
+          "question": "Playfair shifri qanday harflarni bir vaqtda shifrlaydi?",
+          "option_a": "Bitta harf",
+          "option_b": "Juft harf (digraph)",
+          "option_c": "Uch harf",
+          "option_d": "Butun so'z",
           "correct_answer": "B",
           "order_index": 1
         },
         {
           "id": 12,
-          "question": "Which sorting algorithm is fastest on average?",
-          "option_a": "Bubble Sort",
-          "option_b": "Quick Sort",
-          "option_c": "Insertion Sort",
-          "option_d": "Selection Sort",
+          "question": "Playfair shifri uchun qanday o'lchamdagi jadval ishlatiladi?",
+          "option_a": "4×4",
+          "option_b": "5×5",
+          "option_c": "6×6",
+          "option_d": "26×1",
           "correct_answer": "B",
           "order_index": 2
         },
         {
           "id": 13,
-          "question": "What data structure uses LIFO?",
-          "option_a": "Queue",
-          "option_b": "Array",
-          "option_c": "Stack",
-          "option_d": "Tree",
-          "correct_answer": "C",
+          "question": "Playfair shifrida ingliz alifbosidagi qaysi harf odatda birlashtiriladi?",
+          "option_a": "I va J",
+          "option_b": "Q va X",
+          "option_c": "U va V",
+          "option_d": "Y va Z",
+          "correct_answer": "A",
           "order_index": 3
         },
         {
           "id": 14,
-          "question": "What is recursion?",
-          "option_a": "A loop that never ends",
-          "option_b": "A function calling itself",
-          "option_c": "A type of variable",
-          "option_d": "An error in code",
+          "question": "Agar ikkita harf bir qatorda bo'lsa, ular qanday shifrlanadi?",
+          "option_a": "Pastdagi harf bilan",
+          "option_b": "O'ngdagi harf bilan",
+          "option_c": "Chapdagi harf bilan",
+          "option_d": "Teskari tartibda",
           "correct_answer": "B",
           "order_index": 4
         },
         {
           "id": 15,
-          "question": "What is dynamic programming?",
-          "option_a": "Writing code quickly",
-          "option_b": "Optimization technique using memoization",
-          "option_c": "Creating dynamic websites",
-          "option_d": "Real-time programming",
+          "question": "Playfair shifri qachon ixtiro qilingan?",
+          "option_a": "Qadimgi Rim davrida",
+          "option_b": "1854-yilda",
+          "option_c": "20-asr boshida",
+          "option_d": "Ikkinchi jahon urushidan keyin",
           "correct_answer": "B",
           "order_index": 5
         }
@@ -339,97 +434,1122 @@
     },
     {
       "id": 4,
-      "category_id": 3,
+      "category_id": 2,
       "version": "1.0",
-      "title": "Build a Calculator App",
-      "description": "Create a functional calculator from scratch",
-      "cover_image": "https://picsum.photos/400/250?random=4",
-      "content": "In this hands-on project, you'll build a fully functional calculator application from scratch. This project will help you understand UI design, event handling, and application logic.\n\nWhat You'll Build:\n• Basic arithmetic operations (+, -, ×, ÷)\n• Clear and delete functions\n• Decimal point support\n• Error handling\n• Responsive UI design\n\nSkills You'll Learn:\n• UI/UX Design principles\n• Event-driven programming\n• State management\n• Input validation\n• Error handling\n\nFeatures to Implement:\n• Number buttons (0-9)\n• Operation buttons (+, -, ×, ÷)\n• Equals button for calculations\n• Clear (C) and Delete (DEL) buttons\n• Display screen for input/output",
+      "title": "AES shifri — Zamonaviy blok shifrlash",
+      "description": "Advanced Encryption Standard (AES) — bugungi kunda eng keng tarqalgan simmetrik shifrlash algoritmini o'rganing",
+      "cover_image": "https://content.nordlayer.com/uploads/large_AES_encryption_how_does_it_safeguard_your_data_cover_web_1400x800_04f04f308f.webp",
+      "content": "Advanced Encryption Standard (AES) — 2001-yilda NIST (AQSh Milliy Standartlar va Texnologiyalar Instituti) tomonidan qabul qilingan zamonaviy simmetrik blok shifrlash algoritmi. U Data Encryption Standard (DES) o'rnini egallab, hozirgi vaqtda internet, fayllar, disklar, VPN, HTTPS va ko'plab boshqa tizimlarda ma'lumotlarni himoyalash uchun standart hisoblanadi.\n\nAESning asosiy xususiyatlari:\n• Blok hajmi: 128 bit (16 bayt)\n• Kalit uzunligi: 128, 192 yoki 256 bit\n• Raundlar soni: 10 (128-bit kalit uchun), 12 (192-bit), 14 (256-bit)\n\nAES Rijndael algoritmiga asoslangan bo'lib, substitution-permutation tarmoq (SP network) tamoyilida ishlaydi. Har bir raundda 4 ta asosiy operatsiya bajariladi:\n1. SubBytes — har bir bayt S-box (substitution box) jadvalidan yangi qiymat bilan almashtiriladi (non-linear substitution).\n2. ShiftRows — davlat matritsasining qatorlari chapga turli miqdorda siljitiladi (permutation).\n3. MixColumns — har bir ustun GF(2⁸) maydonida maxsus matritsa bilan aralashtiriladi (diffusion).\n4. AddRoundKey — davlat har bir bayti raund kaliti bilan XOR operatsiyasi orqali birlashtiriladi.\n\nBirinchi raund oldidan Initial AddRoundKey bajariladi, oxirgi raundda MixColumns o'tkazib yuboriladi.\n\nKalit kengaytirish (Key Expansion) orqali asosiy kalitdan har bir raund uchun alohida kalitlar hosil qilinadi.\n\nAfzalliklari:\n• Juda tez va samarali (apparat va dasturiy ta'minotda)\n• Hozirgi kunda ma'lum hujumlar bilan buzish amalda imkonsiz (to'g'ri amalga oshirilganda)\n• Butun dunyoda standartlashtirilgan\n\nKamchiliklari:\n• Simmetrik bo'lgani uchun kalitni xavfsiz almashish kerak (masalan, RSA yoki Diffie-Hellman bilan birga ishlatiladi)\n\nAES bugungi kunda eng ishonchli simmetrik shifrlardan biri bo'lib, AES-256 eng yuqori xavfsizlik darajasini ta'minlaydi.\n\nMuhim eslatma: Ushbu darsdagi implementatsiya ta'limiy maqsadda soddalashtirilgan versiya bo'lib, haqiqiy AES emas. Real AESda MixColumns, to'liq S-box va key expansion murakkabroq.",
       "order_index": 1,
       "video": {
-        "youtube_id": "9Os0o3wzS_I",
+        "youtube_id": "3MPkc-PFSRI",
         "duration": "15:30",
-        "title": "Calculator App Tutorial"
+        "title": "AES — Advanced Encryption Standard tushuntirilishi"
       },
+      "images": [
+        {
+          "url": "https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/67f22794bca55282384b8364_618e3ea0a47bd5160d39fa83_AES%2520decryption.png",
+          "type": "diagram",
+          "position": 1,
+          "caption": "AES shifrlashning umumiy tuzilishi: raundlar, AddRoundKey, SubBytes, ShiftRows, MixColumns (FIPS 197 hujjatidan)"
+        },
+        {
+          "url": "https://media.geeksforgeeks.org/wp-content/uploads/20250808153239565880/aes.webp",
+          "type": "diagram",
+          "position": 2,
+          "caption": "AES blok shifri tuzilishi — har bir raundning 4 bosqichi ko'rsatilgan"
+        },
+        {
+          "url": "https://binaryterms.com/wp-content/uploads/2020/05/AES-Encryption.jpg",
+          "type": "diagram",
+          "position": 3,
+          "caption": "AES raund bosqichlari: SubBytes, ShiftRows, MixColumns va AddRoundKey"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/78c56ffe89890582a7060845e131a788266cbd59",
+          "type": "table",
+          "position": 4,
+          "caption": "AES S-box (Rijndael S-box) — SubBytes bosqichida ishlatiladigan 16×16 jadval"
+        },
+        {
+          "url": "https://www.researchgate.net/publication/324796235/figure/fig1/AS:619919657926656@1524811772120/Block-diagram-for-AES-encryption-and-decryption.png",
+          "type": "diagram",
+          "position": 5,
+          "caption": "AES shifrlash jarayonining batafsil sxemasi"
+        }
+      ],
       "algorithm": {
-        "name": "caesar",
-        "display_name": "Caesar Cipher",
-        "description": "Encrypt text using Caesar cipher with a customizable shift value",
+        "name": "aes",
+        "display_name": "AES shifri (soddalashtirilgan)",
+        "description": "Ta'limiy maqsadda AESning asosiy bosqichlarini (SubBytes, ShiftRows, AddRoundKey) namoyish etuvchi soddalashtirilgan shifr (haqiqiy AES emas)",
         "inputs": [
           {
             "label": "Plaintext",
-            "icon": "📚",
+            "icon": "📝",
             "type": "text",
-            "placeholder": "Enter text to encrypt",
-            "default_value": "HELLO",
-            "hint": "Enter the message you want to encrypt",
-            "required": true
+            "placeholder": "Shifrlanadigan matnni kiriting",
+            "default_value": "SALOM DUNYO",
+            "hint": "Matn baytlarga aylantiriladi (UTF-8)",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Ochiq matn",
+              "decrypt": "Shifrlangan matn (HEX)"
+            }
           },
           {
-            "label": "Shift",
+            "label": "Kalit",
             "icon": "🔑",
-            "type": "int",
-            "placeholder": "Enter shift value (1-25)",
-            "default_value": "3",
-            "min_value": 1,
-            "max_value": 25,
-            "hint": "Number of positions to shift each letter",
+            "type": "text",
+            "placeholder": "Kalitni kiriting",
+            "default_value": "MAXFIYKALIT1234",
+            "hint": "128-bit (16 bayt) kalit tavsiya etiladi",
             "required": true
           }
         ],
         "output": {
           "type": "text",
-          "label": "Encrypted Text"
-        }
+          "label": "Natija"
+        },
+        "modes": [
+          {
+            "id": "encrypt",
+            "label": "shifrlash",
+            "icon": "🔒"
+          },
+          {
+            "id": "decrypt",
+            "label": "deshifrlash",
+            "icon": "🔓"
+          }
+        ],
+        "warnings": [
+          {
+            "icon": "⚠️",
+            "text": "Bu HAQIQIY AES emas! Faqat ta'limiy maqsadda soddalashtirilgan versiya. Real AESda MixColumns, to'liq key schedule va padding mavjud."
+          }
+        ]
       },
       "tests": [
         {
           "id": 16,
-          "question": "What UI component displays calculation results?",
-          "option_a": "Button",
-          "option_b": "Text field",
-          "option_c": "Label",
-          "option_d": "Menu",
+          "question": "AES qanday turdagi shifrlash algoritmi?",
+          "option_a": "Asimmetrik",
+          "option_b": "Simmetrik blok shifri",
+          "option_c": "Hash funksiyasi",
+          "option_d": "Raqamli imzo",
           "correct_answer": "B",
           "order_index": 1
         },
         {
           "id": 17,
-          "question": "How do you handle operator precedence?",
-          "option_a": "Ignore it",
-          "option_b": "Use parentheses",
-          "option_c": "Evaluate left to right",
-          "option_d": "Use proper parsing logic",
-          "correct_answer": "D",
+          "question": "AESda blok hajmi qancha?",
+          "option_a": "64 bit",
+          "option_b": "128 bit",
+          "option_c": "256 bit",
+          "option_d": "O'zgaruvchan",
+          "correct_answer": "B",
           "order_index": 2
         },
         {
           "id": 18,
-          "question": "What happens when dividing by zero?",
-          "option_a": "App crashes",
-          "option_b": "Returns zero",
-          "option_c": "Should show error",
-          "option_d": "Nothing",
+          "question": "AES-256 uchun raundlar soni nechta?",
+          "option_a": "10",
+          "option_b": "12",
+          "option_c": "14",
+          "option_d": "16",
           "correct_answer": "C",
           "order_index": 3
         },
         {
           "id": 19,
-          "question": "Which event triggers calculation?",
-          "option_a": "Equals button click",
-          "option_b": "Any button click",
-          "option_c": "App start",
-          "option_d": "Screen touch",
-          "correct_answer": "A",
+          "question": "SubBytes bosqichida nima qilinadi?",
+          "option_a": "Qatorlarni siljitish",
+          "option_b": "Har bir bayt S-boxdan almashtiriladi",
+          "option_c": "Ustunlarni aralashtirish",
+          "option_d": "Kalit bilan XOR",
+          "correct_answer": "B",
           "order_index": 4
         },
         {
           "id": 20,
-          "question": "How to store calculation history?",
-          "option_a": "In memory only",
-          "option_b": "Array or database",
-          "option_c": "Don't store it",
-          "option_d": "In a file",
+          "question": "AES qachon standart sifatida qabul qilingan?",
+          "option_a": "1977-yilda",
+          "option_b": "2001-yilda",
+          "option_c": "1999-yilda",
+          "option_d": "2010-yilda",
+          "correct_answer": "B",
+          "order_index": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category_id": 2,
+      "version": "1.0",
+      "title": "DES shifri — Feistel tuzilmasi va klassik blok shifrlash",
+      "description": "Data Encryption Standard (DES) — 1970-yillardagi eng muhim simmetrik blok shifrlardan birini va uning Feistel tuzilmasini o'rganing",
+      "cover_image": "https://miro.medium.com/1*GFuorFtR_T0mnaoIOMNsmg.jpeg",
+      "content": "DES (Data Encryption Standard) — 1977-yilda NIST (o'sha paytda NBS) tomonidan standart sifatida qabul qilingan birinchi keng qo'llanilgan simmetrik blok shifrlash algoritmi. U IBM tomonidan ishlab chiqilgan va 1990-yillarda bank tizimlari, kredit kartalari, fayl shifrlash va boshqa ko'plab sohalarda asosiy shifrlash usuli bo'lgan.\n\nAsosiy xususiyatlari:\n• Blok uzunligi — 64 bit (8 bayt)\n• Kalit uzunligi — 56 bit (64 bitlik kalitdan 8 bit paritet uchun ishlatiladi)\n• Feistel tuzilmasi — 16 ta bir xil raunddan iborat\n• Har bir raundda matn ikkiga bo'linadi (L va R qismlari), faqat o'ng qism o'zgartiriladi va chap qismga qo'shiladi\n\nFeistel tuzilmasining asosiy afzalligi: shifrlash va deshifrlash jarayonlari deyarli bir xil — faqat raund kalitlari teskari tartibda qo'llaniladi. Bu apparat va dasturiy ta'minotda juda qulay.\n\nDESning asosiy bosqichlari:\n1. Dastlabki permutatsiya (IP) — 64 bitlik kirishni qayta tartiblash\n2. 16 ta Feistel raundi:\n   - O'ng qism (32 bit) kengaytiriladi (Expansion Permutation) → 48 bit\n   - Davra kaliti (48 bit) bilan XOR\n   - 8 ta S-box orqali 6 bitdan 4 bitga siqilish (non-linear qadam)\n   - P-box permutatsiyasi\n   - Chap qism bilan XOR → yangi o'ng qism\n   - Oldingi o'ng qism yangi chap qism bo'ladi\n3. Yakuniy permutatsiya (IP⁻¹) — IP teskarisi\n\nMuhim eslatma: Bu darsdagi \"DES\" simulyatori — ta'limiy maqsadda soddalashtirilgan Feistel tuzilmasi bo'lib, haqiqiy DES emas. Haqiqiy DESda:\n- To'liq 16 raund kalitlari (key schedule) mavjud\n- Maxsus permutatsiya jadvallari (PC-1, PC-2, E-box, S-boxlar, P-box)\n- Paritet bitlari va boshqa texnik detallar bor\nBu yerda faqat Feistelning asosiy g'oyasi, XOR va oddiy S-box simulyatsiyasi ko'rsatilgan.\n\nDESning tarixi va holati:\n- 1970-yillarda juda kuchli edi\n- 1990-yillarning oxirida brute-force hujumlar (56 bit kalit) amaliy bo'lib qoldi\n- 1998-yilda EFF maxsus qurilmasi bilan 56 soat ichida kalit topildi\n- 1999-yildan boshlab 3DES (triple DES) ishlatila boshlandi\n- Hozirda DES va 3DES eskirgan hisoblanadi — AES (2001) to'liq o'rnini bosdi\n\nAmmo DES Feistel tuzilmasining klassik namunasi sifatida kriptografiya o'qitishda hali ham muhim o'rin tutadi.",
+      "order_index": 2,
+      "video": {
+        "youtube_id": "FKp5TIyK5zA",
+        "duration": "11:50",
+        "title": "DES va Feistel tuzilmasi tushuntirilishi (ingliz tilida)"
+      },
+      "images": [
+        {
+          "url": "https://www.researchgate.net/publication/321587376/figure/fig4/AS:568581112987648@1512571709096/Data-Encryption-Standard-DES-Algorithm.png",
+          "type": "diagram",
+          "position": 1,
+          "caption": "DESning Feistel raundi — chap va o'ng qismlar, f-funksiyasi va XOR operatsiyasi"
+        },
+        {
+          "url": "https://www.researchgate.net/publication/3349437/figure/fig1/AS:668911410368521@1536492316806/Outline-of-DES-encryption-algorithm.png",
+          "type": "flowchart",
+          "position": 2,
+          "caption": "To'liq DES shifrlash jarayoni — 16 raund, IP va IP⁻¹ permutatsiyalari"
+        },
+        {
+          "url": "https://www.researchgate.net/publication/306425963/figure/fig2/AS:398613525090307@1472048278894/Depiction-of-One-Round-of-DES-212-3-DES-Algorithm-In-cryptography-techniques-Triple.png",
+          "type": "table",
+          "position": 3,
+          "caption": "DESning dastlabki permutatsiyasi (Initial Permutation — IP)"
+        },
+        {
+          "url": "https://media.geeksforgeeks.org/wp-content/uploads/20250416155622491215/DES-Encryption-Algorithm.webp",
+          "type": "diagram",
+          "position": 4,
+          "caption": "DES kalit jadvali (Key Schedule) — 56 bitdan 16 ta 48 bitlik davra kalitlari hosil qilish"
+        },
+        {
+          "url": "https://media.geeksforgeeks.org/wp-content/uploads/20250417151222605042/SBox.webp",
+          "type": "diagram",
+          "position": 5,
+          "caption": "DESning S-boxlari — non-linear almashtirishning asosiy elementi"
+        }
+      ],
+      "algorithm": {
+        "name": "des",
+        "display_name": "DES shifri (soddalashtirilgan ta'limiy versiya)",
+        "description": "Haqiqiy DES emas — Feistel tuzilmasini o'rganish uchun soddalashtirilgan simulyator",
+        "inputs": [
+          {
+            "label": "Plaintext",
+            "icon": "📝",
+            "type": "text",
+            "placeholder": "Shifrlanadigan matnni kiriting",
+            "default_value": "SALOMDUNYO",
+            "hint": "64 bitlik bloklarga bo'linadi (8 bayt)",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Ochiq matn",
+              "decrypt": "Shifrlangan matn"
+            }
+          },
+          {
+            "label": "Kalit",
+            "icon": "🔑",
+            "type": "text",
+            "placeholder": "Kalitni kiriting (8 ta belgidan kam bo'lmasin)",
+            "default_value": "8TAKALIT",
+            "hint": "56 bitlik kalit simulyatsiyasi uchun ishlatiladi",
+            "required": true
+          }
+        ],
+        "output": {
+          "type": "text",
+          "label": "Natija"
+        },
+        "modes": [
+          {
+            "id": "encrypt",
+            "label": "shifrlash",
+            "icon": "🔒"
+          },
+          {
+            "id": "decrypt",
+            "label": "deshifrlash",
+            "icon": "🔓"
+          }
+        ],
+        "warnings": [
+          {
+            "icon": "⚠️",
+            "text": "Bu HAQIQIY DES emas! Faqat Feistel tuzilmasini tushuntirish uchun soddalashtirilgan o'quv simulyatori. Haqiqiy DESda 16 raund, maxsus jadvallar va kalit kengaytirish mavjud."
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": 21,
+          "question": "DES qanday turdagi shifrlash algoritmi?",
+          "option_a": "Asimmetrik shifr",
+          "option_b": "Simmetrik blok shifri",
+          "option_c": "Hash funksiyasi",
+          "option_d": "Raqamli imzo",
+          "correct_answer": "B",
+          "order_index": 1
+        },
+        {
+          "id": 22,
+          "question": "DESda har bir blok nechta bitdan iborat?",
+          "option_a": "32 bit",
+          "option_b": "64 bit",
+          "option_c": "128 bit",
+          "option_d": "256 bit",
+          "correct_answer": "B",
+          "order_index": 2
+        },
+        {
+          "id": 23,
+          "question": "DES nechta raunddan iborat?",
+          "option_a": "10 ta",
+          "option_b": "12 ta",
+          "option_c": "16 ta",
+          "option_d": "14 ta",
+          "correct_answer": "C",
+          "order_index": 3
+        },
+        {
+          "id": 24,
+          "question": "DESning asosiy tuzilmasi qanday nomlanadi?",
+          "option_a": "Substitution-Permutation Network",
+          "option_b": "Feistel tuzilmasi",
+          "option_c": "Merkle-Damgård",
+          "option_d": "Sponge konstruktsiyasi",
+          "correct_answer": "B",
+          "order_index": 4
+        },
+        {
+          "id": 25,
+          "question": "DES kalit uzunligi qancha (effektiv bitlarda)?",
+          "option_a": "128 bit",
+          "option_b": "56 bit",
+          "option_c": "64 bit",
+          "option_d": "256 bit",
+          "correct_answer": "B",
+          "order_index": 5
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category_id": 2,
+      "version": "1.0",
+      "title": "3DES (Triple DES) — DESning kuchaytirilgan versiyasi",
+      "description": "Triple DES (3DES) — DESning zaifligini bartaraf etish uchun uch marta shifrlashdan foydalanadigan o'tish davri algoritmini o'rganing",
+      "cover_image": "https://sslinsights.com/wp-content/uploads/2024/08/3des-encryption.webp",
+      "content": "Triple DES (3DES yoki TDEA — Triple Data Encryption Algorithm) — 1990-yillarning oxirida DESning 56 bitlik kalit uzunligi brute-force hujumlariga chidamsiz bo'lib qolganidan so'ng ishlab chiqilgan vaqtinchalik yechim edi. U 1998–1999 yillarda NIST tomonidan standart sifatida qabul qilindi va 2000-yillarning birinchi yarmida keng qo'llanildi (bank tizimlari, eski VPNlar, chip kartalar va boshqalar).\n\nAsosiy g'oya: bitta DES o'rniga uch marta DES qo'llash (Encrypt-Decrypt-Encrypt — EDE sxemasi).\n\n3DESning asosiy variantlari:\n1. EEE3 — uchta kalit bilan uch marta shifrlash (eng kuchli, lekin sekin)\n2. EDE3 — uchta turli kalit bilan: Encrypt → Decrypt → Encrypt (eng keng tarqalgan)\n3. EDE2 — ikkita kalit bilan: K1 → K2 → K1 (kamroq xavfsiz)\n\nStandart va eng keng qo'llanilgan shakl — EDE3 (uchta mustaqil kalit).\n\nIshlash jarayoni (64 bit blok uchun):\n1. Birinchi kalit (K1) bilan DES shifrlash (Encrypt)\n2. Ikkinchi kalit (K2) bilan DES deshifrlash (Decrypt)\n3. Uchinchi kalit (K3) bilan DES shifrlash (Encrypt)\n\nDeshifrlash teskari tartibda:\nK3 bilan Decrypt → K2 bilan Encrypt → K1 bilan Decrypt\n\nAfzalliklari (DESga nisbatan):\n• Kalit uzunligi 168 bit (3 × 56) ga yetadi → brute-force hujumlarini sezilarli darajada qiyinlashtiradi\n• Eski DES tizimlariga mos keladi (bitta kalit bilan ishlatish mumkin)\n• Feistel tuzilmasi saqlanib qolgan\n\nKamchiliklari:\n• DESdan 3 barobar sekinroq (uch marta shifrlash)\n• 64 bitlik blok hajmi kichik — zamonaviy hujumlar (sweet32 hujumi) uchun zaif\n• 112 bitlik samarali xavfsizlik (meet-in-the-middle hujumi tufayli)\n• 2017–2023 yillarda ko'plab standartlar (PCI DSS, TLS) 3DESni qo'llashni taqiqladi yoki o'chirib qo'ydi\n• Hozirda to'liq eskirgan — AES (128/256 bit) to'liq o'rnini bosgan\n\nMuhim eslatma: Bu darsdagi \"Triple DES\" simulyatori — ta'limiy maqsadda soddalashtirilgan versiya. Haqiqiy 3DESda:\n- To'liq DES kalit jadvali va 16 raundli Feistel tuzilmasi uch marta takrorlanadi\n- Maxsus padding (masalan, PKCS#5/PKCS#7) talab qilinadi\n- Rejimlar (CBC, ECB) va IV ishlatiladi\nBu yerda faqat EDE sxemasining asosiy g'oyasi ko'rsatilgan.\n\nXulosa: 3DES DESning hayotini uzaytirgan bo'lsa-da, zamonaviy kriptografiyada o'rnini AESga bo'shatib berdi.",
+      "order_index": 3,
+      "video": {
+        "youtube_id": "ptfUW0Q3msA",
+        "duration": "9:55",
+        "title": "Triple DES (3DES) tushuntirilishi (ingliz tilida)"
+      },
+      "images": [
+        {
+          "url": "https://discretegroupblog.wordpress.com/wp-content/uploads/2014/03/working-of-triple-des-algorithm-wwwsanjaalcom.png",
+          "type": "diagram",
+          "position": 1,
+          "caption": "Triple DESning EDE3 sxemasi — Encrypt-Decrypt-Encrypt uchta kalit bilan"
+        },
+        {
+          "url": "https://www.researchgate.net/publication/4129092/figure/fig2/AS:669086514159619@1536534064350/3DES-encryption-decryption-schemes.png",
+          "type": "flowchart",
+          "position": 2,
+          "caption": "3DES shifrlash va deshifrlash jarayoni (EDE sxemasi)"
+        },
+        {
+          "url": "https://www.researchgate.net/profile/Md-Akhtaruzzaman/publication/261076648/figure/fig2/AS:669041765896192@1536525642969/The-encryption-and-decryption-process-of-Triple-DES.png",
+          "type": "diagram",
+          "position": 3,
+          "caption": "3DESning ikki kalitli (EDE2) va uch kalitli (EDE3) variantlari solishtirilgan"
+        },
+        {
+          "url": "https://img.brainkart.com/imagebk9/cidbg0g.jpg",
+          "type": "illustration",
+          "position": 4,
+          "caption": "Triple DESning umumiy tuzilishi — uch bosqichli DES jarayoni"
+        }
+      ],
+      "algorithm": {
+        "name": "tripledes",
+        "display_name": "Triple DES (3DES)",
+        "description": "Uchta kalit bilan Encrypt-Decrypt-Encrypt (EDE) sxemasi orqali shifrlash (ta'limiy simulyator)",
+        "inputs": [
+          {
+            "label": "Plaintext",
+            "icon": "📝",
+            "type": "text",
+            "placeholder": "Shifrlanadigan matnni kiriting",
+            "default_value": "MAXFIY XABAR",
+            "hint": "Matn 64 bitlik bloklarga bo'linadi",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Ochiq matn",
+              "decrypt": "Shifrlangan matn"
+            }
+          },
+          {
+            "label": "Kalit 1",
+            "icon": "🔑1",
+            "type": "text",
+            "placeholder": "Birinchi kalit",
+            "default_value": "KALITBIR",
+            "hint": "Birinchi DES kaliti (8 belgidan)",
+            "required": true
+          },
+          {
+            "label": "Kalit 2",
+            "icon": "🔑2",
+            "type": "text",
+            "placeholder": "Ikkinchi kalit",
+            "default_value": "KALITIKKI",
+            "hint": "Ikkinchi DES kaliti (8 belgidan)",
+            "required": true
+          },
+          {
+            "label": "Kalit 3",
+            "icon": "🔑3",
+            "type": "text",
+            "placeholder": "Uchinchi kalit",
+            "default_value": "KALITUCH",
+            "hint": "Uchinchi DES kaliti (8 belgidan)",
+            "required": true
+          }
+        ],
+        "output": {
+          "type": "text",
+          "label": "Natija"
+        },
+        "modes": [
+          {
+            "id": "encrypt",
+            "label": "shifrlash",
+            "icon": "🔒"
+          },
+          {
+            "id": "decrypt",
+            "label": "deshifrlash",
+            "icon": "🔓"
+          }
+        ],
+        "warnings": [
+          {
+            "icon": "⚠️",
+            "text": "Bu HAQIQIY 3DES emas! Faqat ta'limiy maqsadda EDE sxemasini ko'rsatuvchi soddalashtirilgan simulyator. Haqiqiy 3DES 64 bit blok, 16 raundli DES va maxsus kalit jadvalini uch marta qo'llaydi."
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": 26,
+          "question": "3DESda nechta DES operatsiyasi amalga oshiriladi?",
+          "option_a": "1 marta",
+          "option_b": "2 marta",
+          "option_c": "3 marta",
+          "option_d": "16 marta",
+          "correct_answer": "C",
+          "order_index": 1
+        },
+        {
+          "id": 27,
+          "question": "3DESning eng keng tarqalgan sxemasi qanday?",
+          "option_a": "EEE3",
+          "option_b": "EDE3",
+          "option_c": "DED3",
+          "option_d": "EDE2",
+          "correct_answer": "B",
+          "order_index": 2
+        },
+        {
+          "id": 28,
+          "question": "3DES qaysi algoritmning kuchaytirilgan versiyasi?",
+          "option_a": "AES",
+          "option_b": "DES",
+          "option_c": "RSA",
+          "option_d": "Blowfish",
+          "correct_answer": "B",
+          "order_index": 3
+        },
+        {
+          "id": 29,
+          "question": "3DESning samarali xavfsizligi qancha (meet-in-the-middle hujumi hisobga olinganda)?",
+          "option_a": "168 bit",
+          "option_b": "112 bit",
+          "option_c": "56 bit",
+          "option_d": "256 bit",
+          "correct_answer": "B",
+          "order_index": 4
+        },
+        {
+          "id": 30,
+          "question": "Hozirgi kunda 3DES qanday holatda?",
+          "option_a": "Eng xavfsiz algoritm",
+          "option_b": "Eskirgan va tavsiya etilmaydi",
+          "option_c": "Faqat mobil qurilmalarda ishlatiladi",
+          "option_d": "Yangi standart",
+          "correct_answer": "B",
+          "order_index": 5
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category_id": 2,
+      "version": "1.0",
+      "title": "ChaCha20 — Zamonaviy oqim shifri",
+      "description": "ChaCha20 — tez, xavfsiz va oddiy oqim shifri, zamonaviy kriptografiyaning eng muhim algoritmlaridan biri",
+      "cover_image": "https://destatic.blob.core.windows.net/logos/chacha20-encryption-logo.webp",
+      "content": "ChaCha20 — Daniel J. Bernstein (djb) tomonidan 2008-yilda taklif qilingan yuqori tezlikdagi oqim shifri (stream cipher). U Salsa20 ning yaxshilangan versiyasi bo'lib, hozirda TLS 1.3, WireGuard, OpenSSH, Signal, WhatsApp (Noise protokoli) va boshqa ko'plab zamonaviy tizimlarda keng qo'llanilmoqda.\n\nAsosiy xususiyatlari:\n• 64 baytlik (512 bit) ichki holat (state) bilan ishlaydi\n• 96 bit yoki 192 bit nonce (96-bit standart, 192-bit XChaCha20 uchun)\n• Kalit uzunligi — 256 bit (32 bayt)\n• Har bir 64 baytlik blok uchun 20 ta raund (shuning uchun ChaCha20 nomi)\n• ARX tuzilmasi (Addition, Rotation, XOR) — faqat oddiy arifmetik va bit operatsiyalari, hech qanday S-box yoki murakkab jadval yo'q\n• Shifrlash va deshifrlash bir xil operatsiya — faqat keystream generatsiya qilinadi va plaintext bilan XOR qilinadi\n\nIshlash jarayoni (oddiy):\n1. 4×4 matritsaga 512 bitlik holat tuziladi:\n   - Doimiy konstantalar (sigma yoki tau)\n   - 256 bit kalit\n   - 32/64 bit blok hisoblagichi (counter)\n   - 96 bit nonce\n2. Har bir 512 bitlik holat 20 raunddan o'tkaziladi (har raundda 4 ta \"quarter-round\" operatsiyasi)\n3. Yakuniy holat boshlang'ich holat bilan qo'shiladi (mod 2³²)\n4. Hosil bo'lgan 64 baytlik keystream plaintext bilan XOR qilinadi\n\nQuarter-round operatsiyasi (4 ta so'z uchun):\na += b; d ^= a; d <<< 16\na += d; c ^= a; c <<< 12\na += c; b ^= a; b <<< 8\na += b; d ^= a; d <<< 7\n\nAfzalliklari:\n• Juda tez (apparat va dasturiy ta'minotda optimallashtirilgan)\n• Oddiy va kichik kod hajmi\n• Parallel hisoblash uchun qulay\n• Hech qanday ma'lum zaiflik topilmagan (2025-yil holatiga ko'ra)\n• Nonce qayta ishlatilmasa — juda xavfsiz\n\nKamchiliklari:\n• Oqim shifri bo'lgani uchun to'g'ridan-to'g'ri autentifikatsiya bermaydi (Poly1305 bilan birgalikda ChaCha20-Poly1305 ishlatiladi)\n• Kalit va nonce ni xavfsiz boshqarish talab qilinadi\n\nXChaCha20 — kengaytirilgan versiyasi bo'lib, 192 bit nonce ishlatadi va kalitni bir marta hash qilish orqali yanada moslashuvchanlik beradi.\n\nZamonaviy standartlarda (2025–2026) ChaCha20 AES-GCM ga qaraganda ko'pincha afzal ko'rilmoqda, chunki u mobil qurilmalarda tezroq va energiya tejamkor.",
+      "order_index": 4,
+      "video": {
+        "youtube_id": "HInHICkGRes",
+        "duration": "14:20",
+        "title": "ChaCha20 va Poly1305 tushuntirilishi (ingliz tilida, yaxshi animatsiya)"
+      },
+      "images": [
+        {
+          "url": "https://xilinx.github.io/Vitis_Libraries/security/2019.2/_images/chacha.png",
+          "type": "diagram",
+          "position": 1,
+          "caption": "ChaCha20 ning 4×4 holat matritsasi — kalit, counter, nonce va doimiy konstantalar"
+        },
+        {
+          "url": "https://www.researchgate.net/publication/352377187/figure/fig1/AS:1077054703435776@1633801260261/ChaCha-quarter-round-a-b-c-d.png",
+          "type": "diagram",
+          "position": 2,
+          "caption": "ChaCha20 quarter-round operatsiyasi — ARX (Addition, Rotation, XOR) bosqichlari"
+        },
+        {
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuPfbJ6mGvUcHEe9QZ0qO7nx0CM-OMGgcJ6w&s",
+          "type": "illustration",
+          "position": 3,
+          "caption": "ChaCha20 ning zamonaviy protokollardagi qo'llanilishi (TLS, WireGuard, Signal va boshqalar)"
+        },
+        {
+          "url": "https://andrea.corbellini.name/images/chacha20-poly1305-encryption.svg",
+          "type": "flowchart",
+          "position": 4,
+          "caption": "ChaCha20 keystream generatsiyasi va XOR bilan shifrlash jarayoni"
+        }
+      ],
+      "algorithm": {
+        "name": "chacha20",
+        "display_name": "ChaCha20 oqim shifri",
+        "description": "Tez va xavfsiz oqim shifri — 20 raundli ARX tuzilmasi bilan keystream generatsiya qiladi",
+        "inputs": [
+          {
+            "label": "Plaintext",
+            "icon": "📝",
+            "type": "text",
+            "placeholder": "Shifrlanadigan yoki ochiladigan matn",
+            "default_value": "MAXFIY XABAR 2026",
+            "hint": "Har qanday uzunlikdagi matn (keystream bilan XOR qilinadi)",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Ochiq matn",
+              "decrypt": "Shifrlangan matn"
+            }
+          },
+          {
+            "label": "Kalit",
+            "icon": "🔑",
+            "type": "text",
+            "placeholder": "32 baytlik kalit kiriting",
+            "default_value": "32BELGILI_KALIT_1234567890ABCDEF",
+            "hint": "256 bit (32 ta belgi) tavsiya etiladi",
+            "required": true
+          },
+          {
+            "label": "Nonce",
+            "icon": "🔢",
+            "type": "text",
+            "placeholder": "12 baytlik nonce (masalan, tasodifiy)",
+            "default_value": "UNIKNONCE123",
+            "hint": "Har bir shifrlash uchun noyob bo'lishi kerak (96 bit standart)",
+            "required": false
+          }
+        ],
+        "output": {
+          "type": "text",
+          "label": "Natija (shifrlangan yoki ochilgan matn)"
+        },
+        "modes": [
+          {
+            "id": "encrypt",
+            "label": "shifrlash",
+            "icon": "🔒"
+          },
+          {
+            "id": "decrypt",
+            "label": "deshifrlash",
+            "icon": "🔓"
+          }
+        ],
+        "warnings": [
+          {
+            "icon": "⚠️",
+            "text": "Nonce ni bir xil kalit bilan qayta ishlatmang! Aks holda xavfsizlik buziladi."
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": 31,
+          "question": "ChaCha20 qanday turdagi shifrlash algoritmi?",
+          "option_a": "Blok shifri",
+          "option_b": "Oqim shifri",
+          "option_c": "Hash funksiyasi",
+          "option_d": "Asimmetrik shifr",
+          "correct_answer": "B",
+          "order_index": 1
+        },
+        {
+          "id": 32,
+          "question": "ChaCha20 da har bir blok uchun nechta raund bajariladi?",
+          "option_a": "8 ta",
+          "option_b": "12 ta",
+          "option_c": "20 ta",
+          "option_d": "16 ta",
+          "correct_answer": "C",
+          "order_index": 2
+        },
+        {
+          "id": 33,
+          "question": "ChaCha20 ning asosiy operatsiyalari qaysilar?",
+          "option_a": "S-box va permutatsiya",
+          "option_b": "Addition, Rotation, XOR (ARX)",
+          "option_c": "Faqat XOR",
+          "option_d": "Matritsa ko'paytmasi",
+          "correct_answer": "B",
+          "order_index": 3
+        },
+        {
+          "id": 34,
+          "question": "ChaCha20 da shifrlash va deshifrlash qanday farq qiladi?",
+          "option_a": "Deshifrlash uchun boshqa algoritm ishlatiladi",
+          "option_b": "Hech qanday farq yo'q — ikkalasi ham XOR bilan keystream ishlatadi",
+          "option_c": "Deshifrlashda kalit teskari tartibda ishlatiladi",
+          "option_d": "Deshifrlash uchun nonce o'zgartiriladi",
+          "correct_answer": "B",
+          "order_index": 4
+        },
+        {
+          "id": 35,
+          "question": "ChaCha20 qaysi zamonaviy protokollarda keng qo'llaniladi?",
+          "option_a": "Faqat eski tizimlarda",
+          "option_b": "TLS 1.3, WireGuard, Signal, OpenSSH",
+          "option_c": "Faqat bank kartalarida",
+          "option_d": "Faqat AES-GCM o'rniga",
+          "correct_answer": "B",
+          "order_index": 5
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category_id": 3,
+      "version": "1.0",
+      "title": "RSA shifri — Asimmetrik kriptografiyaning asosi",
+      "description": "RSA algoritmi — ochiq kalitli shifrlashning eng mashhur va asosiy usullaridan biri. Kalit generatsiyasi, shifrlash va deshifrlash jarayonlarini o'rganing",
+      "cover_image": "https://imgcdn.agendadigitale.eu/wp-content/uploads/2024/09/26121032/algoritmi-crittografici-1.jpg",
+      "content": "RSA (Rivest–Shamir–Adleman) — 1977-yilda Ron Rivest, Adi Shamir va Leonard Adleman tomonidan ixtiro qilingan birinchi amaliy ochiq kalitli (public-key) shifrlash algoritmi. U hozirgi kunda internet xavfsizligining asosini tashkil qiladi: HTTPS/TLS, SSH, raqamli imzo, elektron sertifikatlar, VPN va boshqa ko'plab tizimlarda ishlatiladi.\n\nAsosiy g'oya:\n- Ochiq kalit (public key) — hamma bilishi mumkin, shifrlash uchun ishlatiladi\n- Maxfiy kalit (private key) — faqat egasi biladi, deshifrlash uchun ishlatiladi\n\nMatematik asos:\n1. Ikki katta tub son tanlanadi: p va q\n2. n = p × q (modulus)\n3. φ(n) = (p-1) × (q-1) — Eyler funksiyasi\n4. Ochiq eksponent e tanlanadi (ko'pincha 65537) — 1 < e < φ(n) va gcd(e, φ(n)) = 1\n5. Maxfiy eksponent d hisoblanadi: d × e ≡ 1 (mod φ(n))\n6. Ochiq kalit = (e, n)\n   Maxfiy kalit = (d, n)\n\nShifrlash: c = mᵉ mod n\nDeshifrlash: m = cᵈ mod n\n\nBu yerda RSAning to'g'ri ishlashi Fermatning kichik teoremasi va Eyler teoremasiga asoslanadi.\n\nMuhim eslatma: Bu darsdagi RSA simulyatori ta'limiy maqsadda kichik tub sonlar bilan ishlaydi. Haqiqiy RSAda:\n- p va q minglab bitli tub sonlar bo'ladi (masalan, 2048 bit yoki 4096 bit)\n- Katta sonlarni ko'paytirish va modulyar arifmetika uchun maxsus algoritmlar (Montgomery ko'paytmasi, CRT) ishlatiladi\n- Kichik tub sonlar bilan RSA oson faktorizatsiya qilinadi va xavfsiz emas!\n\nAfzalliklari:\n• Ochiq kalitli — kalit almashish muammosini hal qiladi\n• Raqamli imzo qo'yish imkoniyati\n• Ko'p tizimlarda standart\n\nKamchiliklari:\n• Sezilarli darajada sekin (AESdan 100–1000 baravar)\n• Katta kalit uzunligi talab qiladi (hozirda 2048 bit minimal, 3072–4096 tavsiya etiladi)\n• Kvant kompyuterlari (Shor algoritmi) bilan buzilishi mumkin — shuning uchun post-kvant algoritmlari (Kyber, Dilithium) rivojlanmoqda\n\n2026-yil holatiga ko'ra RSA hali ko'p joyda ishlatiladi, lekin yangi tizimlarda post-kvant algoritmlari bilan birga yoki o'rniga qo'llanilmoqda.",
+      "order_index": 1,
+      "video": {
+        "youtube_id": "4zahvcJ9glg",
+        "duration": "13:45",
+        "title": "RSA algoritmi to'liq tushuntirilishi (ingliz tilida, yaxshi misollar)"
+      },
+      "images": [
+        {
+          "url": "https://www.ssldragon.com/wp-content/uploads/2025/05/RSA-encryption-process-1024x574.webp",
+          "type": "diagram",
+          "position": 1,
+          "caption": "RSA kalit generatsiyasi, shifrlash va deshifrlash jarayoni bosqichma-bosqich"
+        },
+        {
+          "url": "https://www.researchgate.net/publication/282249995/figure/fig3/AS:391505266135058@1470353537400/RSA-Algorithm-Process.png",
+          "type": "flowchart",
+          "position": 2,
+          "caption": "RSA algoritmining to'liq sxemasi — tub sonlardan tortib shifrlashgacha"
+        },
+        {
+          "url": "https://ic.nordcdn.com/v1/https://sb.nordcdn.com/m/db491c155c29a4b5/original/blog-infographic-how-does-asymmetric-encryption-work_-svg.svg",
+          "type": "illustration",
+          "position": 3,
+          "caption": "Asimmetrik algoritmlarning ishlash jarayoni"
+        },
+        {
+          "url": "https://i.pinimg.com/736x/85/c0/4a/85c04a7f0c52c7d1e55f4a448db5e38a.jpg",
+          "type": "portrait",
+          "position": 4,
+          "caption": "RSA ixtirochilari: Ron Rivest, Adi Shamir va Leonard Adleman (1977)"
+        }
+      ],
+      "algorithm": {
+        "name": "rsa",
+        "display_name": "RSA shifri (ta'limiy versiya)",
+        "description": "Kichik tub sonlar bilan RSA kalit generatsiyasi, shifrlash va deshifrlashni ko'rsatadi (haqiqiy xavfsizlik uchun ishlatilmaydi!)",
+        "inputs": [
+          {
+            "label": "Message",
+            "icon": "📝",
+            "type": "text",
+            "placeholder": "Shifrlanadigan xabarni kiriting",
+            "default_value": "SALOM",
+            "hint": "Matn ASCII yoki raqamlarga aylantiriladi",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Ochiq xabar",
+              "decrypt": "Shifrlangan raqamlar (masalan, 123 456 789)"
+            }
+          },
+          {
+            "label": "Birinchi tub son (p)",
+            "icon": "🔢",
+            "type": "number",
+            "placeholder": "Kichik tub son kiriting",
+            "default_value": "61",
+            "hint": "Masalan: 61, 53, 17, 101 (katta bo'lsa hisoblash sekinlashadi)",
+            "required": true
+          },
+          {
+            "label": "Ikkinchi tub son (q)",
+            "icon": "🔢",
+            "type": "number",
+            "placeholder": "Boshqa kichik tub son kiriting",
+            "default_value": "53",
+            "hint": "p dan farqli bo'lishi kerak",
+            "required": true
+          }
+        ],
+        "output": {
+          "type": "text",
+          "label": "Natija"
+        },
+        "modes": [
+          {
+            "id": "encrypt",
+            "label": "shifrlash",
+            "icon": "🔒"
+          },
+          {
+            "id": "decrypt",
+            "label": "deshifrlash",
+            "icon": "🔓"
+          }
+        ],
+        "warnings": [
+          {
+            "icon": "⚠️",
+            "text": "Bu faqat TA'LIMIY misol! Haqiqiy RSAda 2048+ bitli tub sonlar ishlatiladi. Kichik sonlar bilan RSA bir necha soniya ichida buziladi."
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": 36,
+          "question": "RSA qanday turdagi shifrlash algoritmi?",
+          "option_a": "Simmetrik shifr",
+          "option_b": "Ochiq kalitli (asimmetrik) shifr",
+          "option_c": "Oqim shifri",
+          "option_d": "Hash funksiyasi",
+          "correct_answer": "B",
+          "order_index": 1
+        },
+        {
+          "id": 37,
+          "question": "RSAda shifrlash uchun qaysi kalit ishlatiladi?",
+          "option_a": "Maxfiy kalit",
+          "option_b": "Ochiq kalit",
+          "option_c": "Ikkalasini ham",
+          "option_d": "Hech qaysi kalit ishlatilmaydi",
+          "correct_answer": "B",
+          "order_index": 2
+        },
+        {
+          "id": 38,
+          "question": "RSAning matematik asosi qaysi tub sonlarga bog'liq?",
+          "option_a": "Bitta tub songa",
+          "option_b": "Ikki katta tub sonning ko'paytmasiga",
+          "option_c": "Tub sonlar yig'indisiga",
+          "option_d": "Tub sonlar kvadratiga",
+          "correct_answer": "B",
+          "order_index": 3
+        },
+        {
+          "id": 39,
+          "question": "RSAda deshifrlash uchun qaysi eksponent ishlatiladi?",
+          "option_a": "Ochiq eksponent e",
+          "option_b": "Maxfiy eksponent d",
+          "option_c": "Tub sonlardan biri",
+          "option_d": "n moduli",
+          "correct_answer": "B",
+          "order_index": 4
+        },
+        {
+          "id": 40,
+          "question": "RSA hozirgi kunda qanday holatda (2026)?",
+          "option_a": "To'liq eskirgan",
+          "option_b": "Hali ko'p ishlatiladi, lekin post-kvant algoritmlari bilan almashtirilmoqda",
+          "option_c": "Faqat eski tizimlarda qolgan",
+          "option_d": "Umuman ishlatilmaydi",
+          "correct_answer": "B",
+          "order_index": 5
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category_id": 3,
+      "version": "1.0",
+      "title": "Elliptik egri chiziqlar kriptografiyasi (ECC)",
+      "description": "Elliptic Curve Cryptography — zamonaviy ochiq kalitli shifrlashning eng samarali va kuchli usullaridan biri",
+      "cover_image": "https://www.thesslstore.com/blog/wp-content/uploads/2019/02/ECC-title.jpg",
+      "content": "Elliptik egri chiziqlar kriptografiyasi (ECC) — 1985-yilda Neal Koblitz va Victor Miller tomonidan mustaqil ravishda taklif qilingan ochiq kalitli kriptografiya usuli. U RSAga qaraganda ancha kichik kalit uzunliklari bilan bir xil xavfsizlik darajasini ta'minlaydi, shuning uchun mobil qurilmalar, IoT, blockchain (Bitcoin, Ethereum), TLS 1.3 va boshqa resurslarni tejaydigan tizimlarda keng qo'llaniladi.\n\nAsosiy g'oya:\nMatematik jihatdan elliptik egri chiziq ustidagi nuqtalar guruhi (elliptic curve group) ishlatiladi. Guruh operatsiyasi — nuqta qo'shish (point addition) va nuqta ikkilash (point doubling).\n\nStandart egri chiziq (masalan, secp256r1 / P-256):\ny² = x³ + ax + b (mod p)\nBu yerda p — katta tub son (modul), a va b — egri chiziq koeffitsientlari.\n\nKalit generatsiyasi:\n1. Bazaviy nuqta G tanlanadi (standart qiymat)\n2. Maxfiy kalit d — tasodifiy son (1 < d < tartib n)\n3. Ochiq kalit Q = d × G (skalyar ko'paytma)\n\nElGamal tipidagi shifrlash (ECC uchun soddalashtirilgan ECIES usuli):\nShifrlash (jo'natuvchi):\n1. Tasodifiy ephemeral kalit k tanlanadi\n2. C1 = k × G\n3. C2 = M + k × Q  (M — xabarni nuqtaga aylantirilgan)\n\nDeshifrlash (qabul qiluvchi):\n1. k × Q = k × (d × G) = d × (k × G) = d × C1\n2. M = C2 - (d × C1)\n\nMuhim eslatma: Bu darsdagi simulyator ta'limiy maqsadda juda soddalashtirilgan va kichik sonlar bilan ishlaydi. Haqiqiy ECCda:\n- 256–521 bitli egri chiziqlar ishlatiladi (masalan, NIST P-256, P-384, Curve25519, secp256k1)\n- Xabar nuqtaga xavfsiz aylantiriladi (ECIES, ECMQV)\n- Hash funksiyalari va MAC (masalan, HMAC) qo'shiladi\n- Kichik sonlar bilan ishlatish xavfsiz emas va oson buziladi!\n\nAfzalliklari (RSAga nisbatan):\n• Kichik kalit uzunligi (256 bit ECC ≈ 3072 bit RSA)\n• Tezroq hisoblash (ayniqsa mobil qurilmalarda)\n• Kamroq xotira va quvvat sarfi\n• Bitcoin, Signal, WhatsApp, SSH (ed25519), TLSda standart\n\nKamchiliklari:\n• Egri chiziq tanlashda zaifliklar bo'lishi mumkin (dual_ec_drbg kabi skandallar)\n• Kvant kompyuterlari (Shor algoritmi) bilan buziladi — shuning uchun post-kvant algoritmlari (Kyber, Dilithium) rivojlanmoqda\n\n2026-yil holatiga ko'ra ECC hali ham eng keng tarqalgan ochiq kalitli algoritm bo'lib qolmoqda, lekin yangi tizimlarda post-kvant himoyasi bilan birga qo'llanilmoqda.",
+      "order_index": 2,
+      "video": {
+        "youtube_id": "6ujNZOfk-0w",
+        "duration": "16:10",
+        "title": "Elliptic Curve Cryptography tushuntirilishi (ingliz tilida, yaxshi vizualizatsiya)"
+      },
+      "images": [
+        {
+          "url": "https://miro.medium.com/1*fN1sBKNvVScvbpEFwyZR0Q.png",
+          "type": "animation",
+          "position": 1,
+          "caption": "Elliptik egri chiziq ustida nuqta ko'paytmasi (skalyar ko'paytma) — d × G"
+        },
+        {
+          "url": "https://ecwebsitedata.blob.core.windows.net/encryption-consulting-website-data/2025/04/ECC.png",
+          "type": "diagram",
+          "position": 2,
+          "caption": "Modulyar maydondagi elliptik egri chiziq — y² = x³ + ax + b (mod p)"
+        },
+        {
+          "url": "https://www.allaboutcircuits.com/uploads/articles/Curve_Cryptography_fig02.jpg",
+          "type": "illustration",
+          "position": 3,
+          "caption": "Nuqta qo'shish (P + Q) va nuqta ikkilash (2P) geometrik ta'rifi"
+        },
+        {
+          "url": "https://i.sstatic.net/hAaxS.png",
+          "type": "chart",
+          "position": 4,
+          "caption": "ECC qo'llanilishi — Curve25519, secp256k1 va boshqa egri chiziqlarning tarqalishi"
+        }
+      ],
+      "algorithm": {
+        "name": "ecc",
+        "display_name": "Elliptik egri chiziqlar kriptografiyasi (ECC)",
+        "description": "Ta'limiy maqsadda soddalashtirilgan ECC shifrlash (ElGamal tipidagi) — kichik egri chiziq bilan",
+        "inputs": [
+          {
+            "label": "Message",
+            "icon": "🔤",
+            "type": "text",
+            "placeholder": "Xabarni raqam sifatida kiriting",
+            "default_value": "20",
+            "hint": "Shifrlashda: xabar (integer); Deshifrlashda: maxfiy kalit (d)",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Ochiq xabar (integer)",
+              "decrypt": "Maxfiy kalit (d)"
+            }
+          },
+          {
+            "label": "pubX",
+            "icon": "📍",
+            "type": "text",
+            "placeholder": "Ochiq kalit X koordinatasi",
+            "default_value": "75",
+            "hint": "Shifrlashda: qabul qiluvchi Q.x; Deshifrlashda: C1.x",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Qabul qiluvchi ochiq kalit X",
+              "decrypt": "Shifrmatn C1 X"
+            }
+          },
+          {
+            "label": "pubY",
+            "icon": "📍",
+            "type": "text",
+            "placeholder": "Ochiq kalit Y koordinatasi",
+            "default_value": "8",
+            "hint": "Shifrlashda: qabul qiluvchi Q.y; Deshifrlashda: C1.y",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Qabul qiluvchi ochiq kalit Y",
+              "decrypt": "Shifrmatn C1 Y"
+            }
+          },
+          {
+            "label": "k",
+            "icon": "🎲",
+            "type": "text",
+            "placeholder": "Tasodifiy k yoki C2 qiymati",
+            "default_value": "3",
+            "hint": "Shifrlashda: tasodifiy ephemeral k; Deshifrlashda: shifrmatn C2",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Ephemeral tasodifiy k",
+              "decrypt": "Shifrmatn C2"
+            }
+          }
+        ],
+        "output": {
+          "type": "text",
+          "label": "Natija"
+        },
+        "modes": [
+          {
+            "id": "encrypt",
+            "label": "shifrlash",
+            "icon": "🔒"
+          },
+          {
+            "id": "decrypt",
+            "label": "deshifrlash",
+            "icon": "🔓"
+          }
+        ],
+        "warnings": [
+          {
+            "icon": "⚠️",
+            "text": "Bu faqat TA'LIMIY simulyator! Haqiqiy ECCda 256+ bitli egri chiziqlar, standart bazaviy nuqtalar va xavfsiz xabar kodlash ishlatiladi. Kichik sonlar bilan hech qanday xavfsizlik ta'minlanmaydi."
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": 41,
+          "question": "ECC qanday turdagi kriptografiya usuli?",
+          "option_a": "Simmetrik shifr",
+          "option_b": "Ochiq kalitli shifr",
+          "option_c": "Hash algoritmi",
+          "option_d": "Oqim shifri",
+          "correct_answer": "B",
+          "order_index": 1
+        },
+        {
+          "id": 42,
+          "question": "ECC RSAga nisbatan qanday afzallikka ega?",
+          "option_a": "Katta kalit uzunligi",
+          "option_b": "Kichik kalit bilan yuqori xavfsizlik",
+          "option_c": "Sezilarli darajada sekinroq",
+          "option_d": "Faqat simmetrik kalit ishlatadi",
+          "correct_answer": "B",
+          "order_index": 2
+        },
+        {
+          "id": 43,
+          "question": "ECCda maxfiy kalit nima?",
+          "option_a": "Ochiq nuqta Q",
+          "option_b": "Tasodifiy son d",
+          "option_c": "Bazaviy nuqta G",
+          "option_d": "Modul p",
+          "correct_answer": "B",
+          "order_index": 3
+        },
+        {
+          "id": 44,
+          "question": "ECCda ochiq kalit qanday hosil qilinadi?",
+          "option_a": "d × G",
+          "option_b": "G × d",
+          "option_c": "p × q",
+          "option_d": "e mod φ(n)",
+          "correct_answer": "A",
+          "order_index": 4
+        },
+        {
+          "id": 45,
+          "question": "2026-yilda ECC qaysi sohalarda keng qo'llanilmoqda?",
+          "option_a": "Faqat eski tizimlarda",
+          "option_b": "Bitcoin, TLS 1.3, Signal, WireGuard, IoT",
+          "option_c": "Faqat RSA o'rniga",
+          "option_d": "Umuman ishlatilmaydi",
+          "correct_answer": "B",
+          "order_index": 5
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category_id": 3,
+      "version": "1.0",
+      "title": "ElGamal shifri — Diskret logarifm muammosiga asoslangan ochiq kalitli shifr",
+      "description": "ElGamal algoritmi — ochiq kalitli shifrlashning klassik namunalaridan biri, diskret logarifm muammosining qiyinligiga asoslanadi",
+      "cover_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpzdc58txfG3x23QmGVXX1aTKCjj0LHYSgxQ&s",
+      "content": "ElGamal shifri — 1985-yilda Taher ElGamal tomonidan taklif qilingan ochiq kalitli (public-key) shifrlash algoritmi. U diskret logarifm muammosining (Discrete Logarithm Problem — DLP) hisoblash qiyinligiga asoslanadi va RSAdan farqli o'laroq, xabarni to'g'ridan-to'g'ri raqam sifatida shifrlaydi (probabilistik shifr).\n\nAsosiy g'oyalar:\n• Modulyar arifmetika va siklik guruh ishlatiladi\n• Ochiq kalit — (p, g, y), bu yerda y = g^x mod p\n• Maxfiy kalit — x (tasodifiy son)\n• Har bir shifrlash uchun yangi tasodifiy ephemeral kalit k ishlatiladi → shifrmatn ikki qismdan iborat (C1, C2)\n\nKalit generatsiyasi:\n1. Katta tub son p tanlanadi\n2. p-1 ning katta tartibli generator g tanlanadi\n3. Maxfiy kalit x tasodifiy tanlanadi (1 < x < p-1)\n4. Ochiq kalit y = g^x mod p hosil qilinadi\n\nShifrlash (jo'natuvchi):\n1. Tasodifiy ephemeral kalit k tanlanadi (1 < k < p-1)\n2. C1 = g^k mod p\n3. C2 = m × y^k mod p   (m — xabar, integer sifatida)\n\nDeshifrlash (qabul qiluvchi):\n1. s = C1^x mod p   (y^k = (g^x)^k = (g^k)^x = C1^x)\n2. m = C2 × s⁻¹ mod p   (s⁻¹ — s ning modulyar teskarisi)\n\nMuhim xususiyatlar:\n• Har bir shifrlash natijasi boshqacha bo'ladi (probabilistik shifr)\n• Xabar uzunligi p dan kichik bo'lishi kerak\n• Haqiqiy qo'llashda xabarni bloklarga bo'lish va padding qo'llaniladi\n\nMuhim eslatma: Bu darsdagi ElGamal simulyatori ta'limiy maqsadda kichik tub sonlar bilan ishlaydi. Haqiqiy ElGamalda:\n- p 2048+ bitli tub son bo'ladi\n- Xabar to'g'ridan-to'g'ri shifrlanmaydi — hybrid shifrlash (masalan, ElGamal + simmetrik shifr) ishlatiladi\n- Kichik p bilan diskret logarifm muammosi juda oson yechiladi (Pollard rho, baby-step giant-step)\n\nAfzalliklari:\n• Ochiq kalitli, kalit almashish muammosini hal qiladi\n• Raqamli imzo uchun ham mos (ElGamal imzo sxemasi)\n• Ba'zi post-kvant hujumlariga nisbatan qiziqarli xususiyatlarga ega\n\nKamchiliklari:\n• Shifrmatn xabardan 2 baravar katta\n• RSAga qaraganda sekinroq va murakkabroq\n• Hozirda ko'pincha ECC (elliptik egri chiziqlar) bilan almashtirilgan (ECC ElGamalning egri chiziq versiyasi hisoblanadi)\n• 2026-yilda yangi tizimlarda kam qo'llaniladi — ko'proq ECC yoki post-kvant algoritmlari afzal ko'rilmoqda\n\nElGamal zamonaviy kriptografiyada asosan ta'limiy va tarixiy ahamiyatga ega, lekin uning asosiy g'oyalari (ephemeral kalit, DLP) hozirgi ko'plab tizimlarda (ECC, DSA, ECDH) qo'llanilmoqda.",
+      "order_index": 3,
+      "video": {
+        "youtube_id": "NdTozypjFOw",
+        "duration": "12:55",
+        "title": "ElGamal shifri va diskret logarifm muammosi (ingliz tilida)"
+      },
+      "images": [
+        {
+          "url": "https://image.slideserve.com/821645/elgamal-encryption-l.jpg",
+          "type": "diagram",
+          "position": 1,
+          "caption": "ElGamal shifrlash va deshifrlash jarayoni — C1 va C2 hosil qilish"
+        },
+        {
+          "url": "https://www.researchgate.net/profile/Pooja-3/publication/273126632/figure/fig1/AS:347432450838532@1459845759716/Diagrammatic-Representation-of-Elgamal-B-El-Gamal-Encryption-Procedure.png",
+          "type": "illustration",
+          "position": 2,
+          "caption": "ElGamalning asosiy matematik bosqichlari — g^k va y^k mod p"
+        },
+        {
+          "url": "https://img.brainkart.com/imagebk9/1XCmpDn.jpg",
+          "type": "flowchart",
+          "position": 3,
+          "caption": "ElGamal shifrlash sxemasi bosqichma-bosqich (kalit generatsiyasidan deshifrlashgacha)"
+        }
+      ],
+      "algorithm": {
+        "name": "elgamal",
+        "display_name": "ElGamal shifri",
+        "description": "Ta'limiy maqsadda soddalashtirilgan ElGamal shifrlash — kichik tub sonlar bilan (haqiqiy xavfsizlik uchun emas)",
+        "inputs": [
+          {
+            "label": "Message",
+            "icon": "📚",
+            "type": "number",
+            "placeholder": "Xabarni raqam sifatida kiriting",
+            "default_value": "20",
+            "hint": "Shifrlash uchun: xabar (p dan kichik integer)",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Xabar (m)",
+              "decrypt": "(deshifrlashda ishlatilmaydi)"
+            }
+          },
+          {
+            "label": "p",
+            "icon": "🔢",
+            "type": "number",
+            "placeholder": "Katta tub son p",
+            "default_value": "71",
+            "hint": "Guruh moduli (tub son)",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Tub modul p",
+              "decrypt": "Shifrmatn C1"
+            }
+          },
+          {
+            "label": "g",
+            "icon": "📍",
+            "type": "number",
+            "placeholder": "Generator g",
+            "default_value": "7",
+            "hint": "p-1 ning yuqori tartibli generator",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Generator g",
+              "decrypt": "Shifrmatn C2"
+            }
+          },
+          {
+            "label": "y",
+            "icon": "🔑",
+            "type": "number",
+            "placeholder": "Qabul qiluvchi ochiq kaliti y",
+            "default_value": "15",
+            "hint": "y = g^x mod p",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Qabul qiluvchi ochiq kalit y",
+              "decrypt": "Tub modul p"
+            }
+          },
+          {
+            "label": "k",
+            "icon": "🎲",
+            "type": "number",
+            "placeholder": "Tasodifiy k yoki maxfiy kalit x",
+            "default_value": "3",
+            "hint": "Shifrlashda: tasodifiy k; Deshifrlashda: maxfiy kalit x",
+            "required": true,
+            "label_for_mode": {
+              "encrypt": "Ephemeral tasodifiy kalit k",
+              "decrypt": "Maxfiy kalit x"
+            }
+          }
+        ],
+        "output": {
+          "type": "text",
+          "label": "Natija"
+        },
+        "modes": [
+          {
+            "id": "encrypt",
+            "label": "shifrlash",
+            "icon": "🔒"
+          },
+          {
+            "id": "decrypt",
+            "label": "deshifrlash",
+            "icon": "🔓"
+          }
+        ],
+        "warnings": [
+          {
+            "icon": "⚠️",
+            "text": "Bu faqat TA'LIMIY misol! Haqiqiy ElGamalda 2048+ bitli p, xavfsiz generator va hybrid shifrlash ishlatiladi. Kichik qiymatlar bilan diskret logarifm muammosi oson yechiladi."
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": 46,
+          "question": "ElGamal shifri qaysi matematik muammoga asoslanadi?",
+          "option_a": "Katta sonlarni faktorizatsiya qilish",
+          "option_b": "Diskret logarifm muammosi (DLP)",
+          "option_c": "Elliptik egri chiziqlar",
+          "option_d": "Lattice muammolari",
+          "correct_answer": "B",
+          "order_index": 1
+        },
+        {
+          "id": 47,
+          "question": "ElGamal shifrmatni nechta qismdan iborat qaytaradi?",
+          "option_a": "Bitta raqam",
+          "option_b": "Ikki qism (C1 va C2)",
+          "option_c": "Uch qism",
+          "option_d": "Faqat matn",
+          "correct_answer": "B",
+          "order_index": 2
+        },
+        {
+          "id": 48,
+          "question": "ElGamalda har bir shifrlash uchun nima yangi ishlatiladi?",
+          "option_a": "Yangi maxfiy kalit",
+          "option_b": "Tasodifiy ephemeral kalit k",
+          "option_c": "Yangi ochiq kalit",
+          "option_d": "Hech narsa yangi emas",
+          "correct_answer": "B",
+          "order_index": 3
+        },
+        {
+          "id": 49,
+          "question": "Deshifrlashda qaysi qiymat maxfiy kalit sifatida ishlatiladi?",
+          "option_a": "y",
+          "option_b": "x",
+          "option_c": "g",
+          "option_d": "p",
+          "correct_answer": "B",
+          "order_index": 4
+        },
+        {
+          "id": 50,
+          "question": "ElGamal hozirgi kunda qanday holatda?",
+          "option_a": "Eng ko'p ishlatiladigan ochiq kalitli shifr",
+          "option_b": "Asosan ta'limiy va tarixiy ahamiyatga ega, ko'pincha ECC bilan almashtirilgan",
+          "option_c": "Faqat simmetrik shifrlarda qo'llaniladi",
+          "option_d": "To'liq eskirgan va ishlatilmaydi",
           "correct_answer": "B",
           "order_index": 5
         }
